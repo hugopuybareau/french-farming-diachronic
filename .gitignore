@@ -1,0 +1,7 @@
+CLAUDE.md
+ra-project-guide.md
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+.DS_Store

@@ -1,0 +1,3424 @@
+{
+  "metadata": {
+    "source": "Agreste - Recensement Agricole 2020",
+    "description": "Nombre d'exploitations agricoles et SAU selon classe de SAU",
+    "url": "https://agreste.agriculture.gouv.fr/",
+    "sau_classes": [
+      "[0,20)",
+      "[20,50)",
+      "[50,100)",
+      "[100,200)",
+      "[200+)"
+    ],
+    "indicators": {
+      "nb_exploitations": "Nombre d'exploitations",
+      "sau": "Superficie Agricole Utilisée (hectares)"
+    }
+  },
+  "national": {
+    "by_class": {
+      "[0,20)": {
+        "nb_exploitations": 172880,
+        "sau": 977944.26
+      },
+      "[20,50)": {
+        "nb_exploitations": 64923,
+        "sau": 2209041.03
+      },
+      "[50,100)": {
+        "nb_exploitations": 77767,
+        "sau": 5696678.54
+      },
+      "[100,200)": {
+        "nb_exploitations": 73626,
+        "sau": 10311849.98
+      },
+      "[200+)": {
+        "nb_exploitations": 27240,
+        "sau": 7685068.59
+      }
+    },
+    "total": {
+      "nb_exploitations": 416436,
+      "sau": 26880582.4
+    }
+  },
+  "regions": [
+    {
+      "code": "01",
+      "name": "GUADELOUPE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 7122,
+          "sau": 24697.59
+        },
+        "[20,50)": {
+          "nb_exploitations": 97,
+          "sau": 2733.47
+        },
+        "[50,100)": {
+          "nb_exploitations": 23,
+          "sau": 1686.22
+        },
+        "[100,200)": {
+          "nb_exploitations": 8,
+          "sau": 1099.45
+        },
+        "[200+)": {
+          "nb_exploitations": 4,
+          "sau": 1619.12
+        }
+      },
+      "total": {
+        "nb_exploitations": 7254,
+        "sau": 31835.85
+      }
+    },
+    {
+      "code": "02",
+      "name": "MARTINIQUE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 2494,
+          "sau": 9124.2
+        },
+        "[20,50)": {
+          "nb_exploitations": 102,
+          "sau": 3074.51
+        },
+        "[50,100)": {
+          "nb_exploitations": 53,
+          "sau": 3773.71
+        },
+        "[100,200)": {
+          "nb_exploitations": 22,
+          "sau": 2987.49
+        },
+        "[200+)": {
+          "nb_exploitations": 8,
+          "sau": 2933.87
+        }
+      },
+      "total": {
+        "nb_exploitations": 2679,
+        "sau": 21893.78
+      }
+    },
+    {
+      "code": "03",
+      "name": "GUYANE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 5880,
+          "sau": 13353.61
+        },
+        "[20,50)": {
+          "nb_exploitations": 152,
+          "sau": 4259.69
+        },
+        "[50,100)": {
+          "nb_exploitations": 50,
+          "sau": 3517.48
+        },
+        "[100,200)": {
+          "nb_exploitations": 24,
+          "sau": 3225.68
+        },
+        "[200+)": {
+          "nb_exploitations": 24,
+          "sau": 11888.34
+        }
+      },
+      "total": {
+        "nb_exploitations": 6130,
+        "sau": 36244.8
+      }
+    },
+    {
+      "code": "04",
+      "name": "LA REUNION",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 6010,
+          "sau": 25166.6
+        },
+        "[20,50)": {
+          "nb_exploitations": 202,
+          "sau": 6003.15
+        },
+        "[50,100)": {
+          "nb_exploitations": 49,
+          "sau": 3347.87
+        },
+        "[100,200)": {
+          "nb_exploitations": 18,
+          "sau": 2382.05
+        },
+        "[200+)": {
+          "nb_exploitations": 3,
+          "sau": 1874.23
+        }
+      },
+      "total": {
+        "nb_exploitations": 6282,
+        "sau": 38773.9
+      }
+    },
+    {
+      "code": "06",
+      "name": "MAYOTTE",
+      "by_class": {
+        "[0,50)": {
+          "nb_exploitations": 4312,
+          "sau": 5959.45
+        }
+      },
+      "total": {
+        "nb_exploitations": 4312,
+        "sau": 5959.45
+      }
+    },
+    {
+      "code": "11",
+      "name": "ILE DE FRANCE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 847,
+          "sau": 4580.23
+        },
+        "[20,50)": {
+          "nb_exploitations": 369,
+          "sau": 12606.2
+        },
+        "[50,100)": {
+          "nb_exploitations": 686,
+          "sau": 52379.15
+        },
+        "[100,200)": {
+          "nb_exploitations": 1574,
+          "sau": 232080.21
+        },
+        "[200+)": {
+          "nb_exploitations": 949,
+          "sau": 262380.88
+        }
+      },
+      "total": {
+        "nb_exploitations": 4425,
+        "sau": 564026.67
+      }
+    },
+    {
+      "code": "24",
+      "name": "CENTRE VAL DE LOIRE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 4420,
+          "sau": 29305.58
+        },
+        "[20,50)": {
+          "nb_exploitations": 1973,
+          "sau": 67549.82
+        },
+        "[50,100)": {
+          "nb_exploitations": 3381,
+          "sau": 257671.73
+        },
+        "[100,200)": {
+          "nb_exploitations": 6729,
+          "sau": 971824.18
+        },
+        "[200+)": {
+          "nb_exploitations": 3416,
+          "sau": 958292.21
+        }
+      },
+      "total": {
+        "nb_exploitations": 19919,
+        "sau": 2284643.52
+      }
+    },
+    {
+      "code": "27",
+      "name": "BOURGOGNE FRANCHE COMTE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 7347,
+          "sau": 45350.31
+        },
+        "[20,50)": {
+          "nb_exploitations": 2145,
+          "sau": 72079.55
+        },
+        "[50,100)": {
+          "nb_exploitations": 3987,
+          "sau": 304174.42
+        },
+        "[100,200)": {
+          "nb_exploitations": 6519,
+          "sau": 932333.06
+        },
+        "[200+)": {
+          "nb_exploitations": 3664,
+          "sau": 1074529.51
+        }
+      },
+      "total": {
+        "nb_exploitations": 23662,
+        "sau": 2428466.85
+      }
+    },
+    {
+      "code": "28",
+      "name": "NORMANDIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 9499,
+          "sau": 60616.82
+        },
+        "[20,50)": {
+          "nb_exploitations": 3334,
+          "sau": 113086.91
+        },
+        "[50,100)": {
+          "nb_exploitations": 5593,
+          "sau": 418734.18
+        },
+        "[100,200)": {
+          "nb_exploitations": 6258,
+          "sau": 879189.71
+        },
+        "[200+)": {
+          "nb_exploitations": 1826,
+          "sau": 481228.18
+        }
+      },
+      "total": {
+        "nb_exploitations": 26510,
+        "sau": 1952855.8
+      }
+    },
+    {
+      "code": "32",
+      "name": "HAUTS DE FRANCE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 5513,
+          "sau": 32586.11
+        },
+        "[20,50)": {
+          "nb_exploitations": 3532,
+          "sau": 125635.87
+        },
+        "[50,100)": {
+          "nb_exploitations": 5888,
+          "sau": 437345.66
+        },
+        "[100,200)": {
+          "nb_exploitations": 6037,
+          "sau": 852829.19
+        },
+        "[200+)": {
+          "nb_exploitations": 2493,
+          "sau": 680200.6
+        }
+      },
+      "total": {
+        "nb_exploitations": 23463,
+        "sau": 2128597.43
+      }
+    },
+    {
+      "code": "44",
+      "name": "GRAND EST",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 19516,
+          "sau": 77821.32
+        },
+        "[20,50)": {
+          "nb_exploitations": 3816,
+          "sau": 129310.4
+        },
+        "[50,100)": {
+          "nb_exploitations": 5220,
+          "sau": 391439.48
+        },
+        "[100,200)": {
+          "nb_exploitations": 8113,
+          "sau": 1165377.97
+        },
+        "[200+)": {
+          "nb_exploitations": 4324,
+          "sau": 1260734.07
+        }
+      },
+      "total": {
+        "nb_exploitations": 40989,
+        "sau": 3024683.24
+      }
+    },
+    {
+      "code": "52",
+      "name": "PAYS DE LA LOIRE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 7022,
+          "sau": 44274.38
+        },
+        "[20,50)": {
+          "nb_exploitations": 4095,
+          "sau": 143509.88
+        },
+        "[50,100)": {
+          "nb_exploitations": 6919,
+          "sau": 513399.98
+        },
+        "[100,200)": {
+          "nb_exploitations": 6656,
+          "sau": 924159.23
+        },
+        "[200+)": {
+          "nb_exploitations": 1717,
+          "sau": 453992.95
+        }
+      },
+      "total": {
+        "nb_exploitations": 26409,
+        "sau": 2079336.42
+      }
+    },
+    {
+      "code": "53",
+      "name": "BRETAGNE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 7092,
+          "sau": 44108.66
+        },
+        "[20,50)": {
+          "nb_exploitations": 5423,
+          "sau": 194040.14
+        },
+        "[50,100)": {
+          "nb_exploitations": 8646,
+          "sau": 626250.14
+        },
+        "[100,200)": {
+          "nb_exploitations": 4604,
+          "sau": 612901.66
+        },
+        "[200+)": {
+          "nb_exploitations": 582,
+          "sau": 146951.17
+        }
+      },
+      "total": {
+        "nb_exploitations": 26347,
+        "sau": 1624251.77
+      }
+    },
+    {
+      "code": "75",
+      "name": "NOUVELLE AQUITAINE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 24637,
+          "sau": 170328.63
+        },
+        "[20,50)": {
+          "nb_exploitations": 13357,
+          "sau": 449852.18
+        },
+        "[50,100)": {
+          "nb_exploitations": 12702,
+          "sau": 916576.89
+        },
+        "[100,200)": {
+          "nb_exploitations": 10222,
+          "sau": 1423742.84
+        },
+        "[200+)": {
+          "nb_exploitations": 3282,
+          "sau": 911371.57
+        }
+      },
+      "total": {
+        "nb_exploitations": 64200,
+        "sau": 3871872.11
+      }
+    },
+    {
+      "code": "76",
+      "name": "OCCITANIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 29871,
+          "sau": 196139.13
+        },
+        "[20,50)": {
+          "nb_exploitations": 13337,
+          "sau": 446305.24
+        },
+        "[50,100)": {
+          "nb_exploitations": 11439,
+          "sau": 818439.39
+        },
+        "[100,200)": {
+          "nb_exploitations": 7527,
+          "sau": 1032811.85
+        },
+        "[200+)": {
+          "nb_exploitations": 2196,
+          "sau": 637515.84
+        }
+      },
+      "total": {
+        "nb_exploitations": 64370,
+        "sau": 3131211.45
+      }
+    },
+    {
+      "code": "84",
+      "name": "AUVERGNE RHONE ALPES",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 18530,
+          "sau": 126064.86
+        },
+        "[20,50)": {
+          "nb_exploitations": 9469,
+          "sau": 323225.26
+        },
+        "[50,100)": {
+          "nb_exploitations": 10600,
+          "sau": 768993.59
+        },
+        "[100,200)": {
+          "nb_exploitations": 7830,
+          "sau": 1071633.76
+        },
+        "[200+)": {
+          "nb_exploitations": 2064,
+          "sau": 570466.05
+        }
+      },
+      "total": {
+        "nb_exploitations": 48493,
+        "sau": 2860383.52
+      }
+    },
+    {
+      "code": "93",
+      "name": "PROVENCE ALPES COTE D AZUR",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 11723,
+          "sau": 61593.84
+        },
+        "[20,50)": {
+          "nb_exploitations": 2876,
+          "sau": 93601.24
+        },
+        "[50,100)": {
+          "nb_exploitations": 1803,
+          "sau": 127495.6
+        },
+        "[100,200)": {
+          "nb_exploitations": 1081,
+          "sau": 149989.87
+        },
+        "[200+)": {
+          "nb_exploitations": 573,
+          "sau": 195772.19
+        }
+      },
+      "total": {
+        "nb_exploitations": 18056,
+        "sau": 628452.74
+      }
+    },
+    {
+      "code": "94",
+      "name": "CORSE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1046,
+          "sau": 6894.67
+        },
+        "[20,50)": {
+          "nb_exploitations": 643,
+          "sau": 22145.79
+        },
+        "[50,100)": {
+          "nb_exploitations": 728,
+          "sau": 51453.05
+        },
+        "[100,200)": {
+          "nb_exploitations": 404,
+          "sau": 53281.78
+        },
+        "[200+)": {
+          "nb_exploitations": 115,
+          "sau": 33317.81
+        }
+      },
+      "total": {
+        "nb_exploitations": 2936,
+        "sau": 167093.1
+      }
+    },
+    {
+      "code": "Champ : France, hors structures gérant les pacages collectifs, y compris exploitations sans SAU.",
+      "name": NaN,
+      "by_class": {}
+    },
+    {
+      "code": "Source : Agreste, recensement agricole 2020.",
+      "name": NaN,
+      "by_class": {}
+    },
+    {
+      "code": "s : donnée couverte par le secret statistique.",
+      "name": NaN,
+      "by_class": {}
+    },
+    {
+      "code": "[ : borne incluse.",
+      "name": NaN,
+      "by_class": {}
+    },
+    {
+      "code": "( : borne exclue.",
+      "name": NaN,
+      "by_class": {}
+    },
+    {
+      "code": "SAU = superficie agricole utilisée.",
+      "name": NaN,
+      "by_class": {}
+    }
+  ],
+  "departments": [
+    {
+      "code": "01",
+      "region_name": "AUVERGNE RHONE ALPES",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 991,
+          "sau": 6059.35
+        },
+        "[20,50)": {
+          "nb_exploitations": 403,
+          "sau": 13807.03
+        },
+        "[50,100)": {
+          "nb_exploitations": 604,
+          "sau": 45667.44
+        },
+        "[100,200)": {
+          "nb_exploitations": 752,
+          "sau": 106862.3
+        },
+        "[200+)": {
+          "nb_exploitations": 267,
+          "sau": 72389.05
+        }
+      },
+      "total": {
+        "nb_exploitations": 3017,
+        "sau": 244785.17
+      }
+    },
+    {
+      "code": "03",
+      "region_name": "AUVERGNE RHONE ALPES",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1129,
+          "sau": 7707.98
+        },
+        "[20,50)": {
+          "nb_exploitations": 435,
+          "sau": 14758.37
+        },
+        "[50,100)": {
+          "nb_exploitations": 740,
+          "sau": 56145.5
+        },
+        "[100,200)": {
+          "nb_exploitations": 1304,
+          "sau": 187206.16
+        },
+        "[200+)": {
+          "nb_exploitations": 748,
+          "sau": 213585.65
+        }
+      },
+      "total": {
+        "nb_exploitations": 4356,
+        "sau": 479403.66
+      }
+    },
+    {
+      "code": "07",
+      "region_name": "AUVERGNE RHONE ALPES",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 2121,
+          "sau": 12977.1
+        },
+        "[20,50)": {
+          "nb_exploitations": 794,
+          "sau": 25935.35
+        },
+        "[50,100)": {
+          "nb_exploitations": 535,
+          "sau": 37440.06
+        },
+        "[100,200)": {
+          "nb_exploitations": 247,
+          "sau": 32975.62
+        },
+        "[200+)": {
+          "nb_exploitations": 51,
+          "sau": 12798.42
+        }
+      },
+      "total": {
+        "nb_exploitations": 3748,
+        "sau": 122126.55
+      }
+    },
+    {
+      "code": "15",
+      "region_name": "AUVERGNE RHONE ALPES",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 830,
+          "sau": 6370.15
+        },
+        "[20,50)": {
+          "nb_exploitations": 1006,
+          "sau": 36156.11
+        },
+        "[50,100)": {
+          "nb_exploitations": 1620,
+          "sau": 118206.35
+        },
+        "[100,200)": {
+          "nb_exploitations": 1069,
+          "sau": 142701.68
+        },
+        "[200+)": {
+          "nb_exploitations": 150,
+          "sau": 37619.54
+        }
+      },
+      "total": {
+        "nb_exploitations": 4675,
+        "sau": 341053.83
+      }
+    },
+    {
+      "code": "26",
+      "region_name": "AUVERGNE RHONE ALPES",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 2640,
+          "sau": 17982.7
+        },
+        "[20,50)": {
+          "nb_exploitations": 1292,
+          "sau": 42966.01
+        },
+        "[50,100)": {
+          "nb_exploitations": 867,
+          "sau": 61422.39
+        },
+        "[100,200)": {
+          "nb_exploitations": 380,
+          "sau": 50670.55
+        },
+        "[200+)": {
+          "nb_exploitations": 74,
+          "sau": 20917.68
+        }
+      },
+      "total": {
+        "nb_exploitations": 5253,
+        "sau": 193959.33
+      }
+    },
+    {
+      "code": "38",
+      "region_name": "AUVERGNE RHONE ALPES",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 2174,
+          "sau": 14692.15
+        },
+        "[20,50)": {
+          "nb_exploitations": 935,
+          "sau": 32123.41
+        },
+        "[50,100)": {
+          "nb_exploitations": 915,
+          "sau": 65475.61
+        },
+        "[100,200)": {
+          "nb_exploitations": 670,
+          "sau": 91421.0
+        },
+        "[200+)": {
+          "nb_exploitations": 136,
+          "sau": 36627.12
+        }
+      },
+      "total": {
+        "nb_exploitations": 4830,
+        "sau": 240339.29
+      }
+    },
+    {
+      "code": "42",
+      "region_name": "AUVERGNE RHONE ALPES",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1234,
+          "sau": 9559.3
+        },
+        "[20,50)": {
+          "nb_exploitations": 937,
+          "sau": 32206.74
+        },
+        "[50,100)": {
+          "nb_exploitations": 1152,
+          "sau": 83516.58
+        },
+        "[100,200)": {
+          "nb_exploitations": 656,
+          "sau": 86446.62
+        },
+        "[200+)": {
+          "nb_exploitations": 79,
+          "sau": 19833.64
+        }
+      },
+      "total": {
+        "nb_exploitations": 4058,
+        "sau": 231562.88
+      }
+    },
+    {
+      "code": "43",
+      "region_name": "AUVERGNE RHONE ALPES",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1130,
+          "sau": 8671.37
+        },
+        "[20,50)": {
+          "nb_exploitations": 849,
+          "sau": 29794.49
+        },
+        "[50,100)": {
+          "nb_exploitations": 1254,
+          "sau": 90599.48
+        },
+        "[100,200)": {
+          "nb_exploitations": 663,
+          "sau": 88337.92
+        },
+        "[200+)": {
+          "nb_exploitations": 56,
+          "sau": 13755.4
+        }
+      },
+      "total": {
+        "nb_exploitations": 3952,
+        "sau": 231158.66
+      }
+    },
+    {
+      "code": "63",
+      "region_name": "AUVERGNE RHONE ALPES",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1842,
+          "sau": 11966.99
+        },
+        "[20,50)": {
+          "nb_exploitations": 1004,
+          "sau": 34559.42
+        },
+        "[50,100)": {
+          "nb_exploitations": 1404,
+          "sau": 103226.3
+        },
+        "[100,200)": {
+          "nb_exploitations": 1247,
+          "sau": 170073.41
+        },
+        "[200+)": {
+          "nb_exploitations": 248,
+          "sau": 65812.12
+        }
+      },
+      "total": {
+        "nb_exploitations": 5745,
+        "sau": 385638.24
+      }
+    },
+    {
+      "code": "69",
+      "region_name": "AUVERGNE RHONE ALPES",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 2685,
+          "sau": 17918.04
+        },
+        "[20,50)": {
+          "nb_exploitations": 905,
+          "sau": 29874.64
+        },
+        "[50,100)": {
+          "nb_exploitations": 630,
+          "sau": 44067.77
+        },
+        "[100,200)": {
+          "nb_exploitations": 265,
+          "sau": 34567.68
+        },
+        "[200+)": {
+          "nb_exploitations": 42,
+          "sau": 10519.72
+        }
+      },
+      "total": {
+        "nb_exploitations": 4527,
+        "sau": 136947.85
+      }
+    },
+    {
+      "code": "73",
+      "region_name": "AUVERGNE RHONE ALPES",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 912,
+          "sau": 5949.78
+        },
+        "[20,50)": {
+          "nb_exploitations": 352,
+          "sau": 11856.15
+        },
+        "[50,100)": {
+          "nb_exploitations": 337,
+          "sau": 24525.97
+        },
+        "[100,200)": {
+          "nb_exploitations": 272,
+          "sau": 38234.83
+        },
+        "[200+)": {
+          "nb_exploitations": 136,
+          "sau": 47451.52
+        }
+      },
+      "total": {
+        "nb_exploitations": 2009,
+        "sau": 128018.25
+      }
+    },
+    {
+      "code": "74",
+      "region_name": "AUVERGNE RHONE ALPES",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 842,
+          "sau": 6209.95
+        },
+        "[20,50)": {
+          "nb_exploitations": 557,
+          "sau": 19187.54
+        },
+        "[50,100)": {
+          "nb_exploitations": 542,
+          "sau": 38700.14
+        },
+        "[100,200)": {
+          "nb_exploitations": 305,
+          "sau": 42135.99
+        },
+        "[200+)": {
+          "nb_exploitations": 77,
+          "sau": 19156.19
+        }
+      },
+      "total": {
+        "nb_exploitations": 2323,
+        "sau": 125389.81
+      }
+    },
+    {
+      "code": "21",
+      "region_name": "BOURGOGNE FRANCHE COMTE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1581,
+          "sau": 9899.99
+        },
+        "[20,50)": {
+          "nb_exploitations": 265,
+          "sau": 8516.8
+        },
+        "[50,100)": {
+          "nb_exploitations": 404,
+          "sau": 30575.03
+        },
+        "[100,200)": {
+          "nb_exploitations": 1020,
+          "sau": 150385.61
+        },
+        "[200+)": {
+          "nb_exploitations": 868,
+          "sau": 262633.13
+        }
+      },
+      "total": {
+        "nb_exploitations": 4138,
+        "sau": 462010.56
+      }
+    },
+    {
+      "code": "25",
+      "region_name": "BOURGOGNE FRANCHE COMTE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 418,
+          "sau": 2363.63
+        },
+        "[20,50)": {
+          "nb_exploitations": 261,
+          "sau": 9703.94
+        },
+        "[50,100)": {
+          "nb_exploitations": 989,
+          "sau": 73692.74
+        },
+        "[100,200)": {
+          "nb_exploitations": 726,
+          "sau": 97562.35
+        },
+        "[200+)": {
+          "nb_exploitations": 144,
+          "sau": 38510.0
+        }
+      },
+      "total": {
+        "nb_exploitations": 2538,
+        "sau": 221832.66
+      }
+    },
+    {
+      "code": "39",
+      "region_name": "BOURGOGNE FRANCHE COMTE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 768,
+          "sau": 3857.73
+        },
+        "[20,50)": {
+          "nb_exploitations": 202,
+          "sau": 6894.75
+        },
+        "[50,100)": {
+          "nb_exploitations": 434,
+          "sau": 33544.25
+        },
+        "[100,200)": {
+          "nb_exploitations": 613,
+          "sau": 86669.39
+        },
+        "[200+)": {
+          "nb_exploitations": 226,
+          "sau": 62043.36
+        }
+      },
+      "total": {
+        "nb_exploitations": 2243,
+        "sau": 193009.48
+      }
+    },
+    {
+      "code": "58",
+      "region_name": "BOURGOGNE FRANCHE COMTE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 580,
+          "sau": 3967.22
+        },
+        "[20,50)": {
+          "nb_exploitations": 229,
+          "sau": 7645.8
+        },
+        "[50,100)": {
+          "nb_exploitations": 395,
+          "sau": 30491.07
+        },
+        "[100,200)": {
+          "nb_exploitations": 894,
+          "sau": 130204.33
+        },
+        "[200+)": {
+          "nb_exploitations": 650,
+          "sau": 195509.77
+        }
+      },
+      "total": {
+        "nb_exploitations": 2748,
+        "sau": 367818.19
+      }
+    },
+    {
+      "code": "70",
+      "region_name": "BOURGOGNE FRANCHE COMTE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 481,
+          "sau": 2852.23
+        },
+        "[20,50)": {
+          "nb_exploitations": 195,
+          "sau": 6565.07
+        },
+        "[50,100)": {
+          "nb_exploitations": 351,
+          "sau": 26998.26
+        },
+        "[100,200)": {
+          "nb_exploitations": 634,
+          "sau": 90144.97
+        },
+        "[200+)": {
+          "nb_exploitations": 368,
+          "sau": 108753.79
+        }
+      },
+      "total": {
+        "nb_exploitations": 2029,
+        "sau": 235314.32
+      }
+    },
+    {
+      "code": "71",
+      "region_name": "BOURGOGNE FRANCHE COMTE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 2339,
+          "sau": 15121.98
+        },
+        "[20,50)": {
+          "nb_exploitations": 632,
+          "sau": 20967.68
+        },
+        "[50,100)": {
+          "nb_exploitations": 918,
+          "sau": 71085.81
+        },
+        "[100,200)": {
+          "nb_exploitations": 1509,
+          "sau": 212995.67
+        },
+        "[200+)": {
+          "nb_exploitations": 681,
+          "sau": 192518.91
+        }
+      },
+      "total": {
+        "nb_exploitations": 6079,
+        "sau": 512690.05
+      }
+    },
+    {
+      "code": "89",
+      "region_name": "BOURGOGNE FRANCHE COMTE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1099,
+          "sau": 6789.12
+        },
+        "[20,50)": {
+          "nb_exploitations": 323,
+          "sau": 10564.01
+        },
+        "[50,100)": {
+          "nb_exploitations": 447,
+          "sau": 34225.85
+        },
+        "[100,200)": {
+          "nb_exploitations": 1067,
+          "sau": 157000.86
+        },
+        "[200+)": {
+          "nb_exploitations": 703,
+          "sau": 207521.27
+        }
+      },
+      "total": {
+        "nb_exploitations": 3639,
+        "sau": 416101.11
+      }
+    },
+    {
+      "code": "90",
+      "region_name": "BOURGOGNE FRANCHE COMTE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 81,
+          "sau": 498.41
+        },
+        "[20,50)": {
+          "nb_exploitations": 38,
+          "sau": 1221.5
+        },
+        "[50,100)": {
+          "nb_exploitations": 49,
+          "sau": 3561.41
+        },
+        "[100,200)": {
+          "nb_exploitations": 56,
+          "sau": 7369.88
+        },
+        "[200+)": {
+          "nb_exploitations": 24,
+          "sau": 7039.28
+        }
+      },
+      "total": {
+        "nb_exploitations": 248,
+        "sau": 19690.48
+      }
+    },
+    {
+      "code": "22",
+      "region_name": "BRETAGNE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1933,
+          "sau": 11771.29
+        },
+        "[20,50)": {
+          "nb_exploitations": 1584,
+          "sau": 57215.36
+        },
+        "[50,100)": {
+          "nb_exploitations": 2496,
+          "sau": 179924.58
+        },
+        "[100,200)": {
+          "nb_exploitations": 1196,
+          "sau": 158457.26
+        },
+        "[200+)": {
+          "nb_exploitations": 107,
+          "sau": 25969.8
+        }
+      },
+      "total": {
+        "nb_exploitations": 7316,
+        "sau": 433338.29
+      }
+    },
+    {
+      "code": "29",
+      "region_name": "BRETAGNE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1841,
+          "sau": 11022.64
+        },
+        "[20,50)": {
+          "nb_exploitations": 1301,
+          "sau": 45579.67
+        },
+        "[50,100)": {
+          "nb_exploitations": 1852,
+          "sau": 134962.93
+        },
+        "[100,200)": {
+          "nb_exploitations": 1108,
+          "sau": 148721.17
+        },
+        "[200+)": {
+          "nb_exploitations": 165,
+          "sau": 42295.77
+        }
+      },
+      "total": {
+        "nb_exploitations": 6267,
+        "sau": 382582.18
+      }
+    },
+    {
+      "code": "35",
+      "region_name": "BRETAGNE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1757,
+          "sau": 11423.54
+        },
+        "[20,50)": {
+          "nb_exploitations": 1397,
+          "sau": 50600.59
+        },
+        "[50,100)": {
+          "nb_exploitations": 2489,
+          "sau": 179194.44
+        },
+        "[100,200)": {
+          "nb_exploitations": 1200,
+          "sau": 159290.1
+        },
+        "[200+)": {
+          "nb_exploitations": 158,
+          "sau": 39947.32
+        }
+      },
+      "total": {
+        "nb_exploitations": 7001,
+        "sau": 440455.99
+      }
+    },
+    {
+      "code": "56",
+      "region_name": "BRETAGNE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1561,
+          "sau": 9891.19
+        },
+        "[20,50)": {
+          "nb_exploitations": 1141,
+          "sau": 40644.52
+        },
+        "[50,100)": {
+          "nb_exploitations": 1809,
+          "sau": 132168.19
+        },
+        "[100,200)": {
+          "nb_exploitations": 1100,
+          "sau": 146433.13
+        },
+        "[200+)": {
+          "nb_exploitations": 152,
+          "sau": 38738.28
+        }
+      },
+      "total": {
+        "nb_exploitations": 5763,
+        "sau": 367875.31
+      }
+    },
+    {
+      "code": "18",
+      "region_name": "CENTRE VAL DE LOIRE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 749,
+          "sau": 5279.32
+        },
+        "[20,50)": {
+          "nb_exploitations": 272,
+          "sau": 8828.45
+        },
+        "[50,100)": {
+          "nb_exploitations": 368,
+          "sau": 27830.23
+        },
+        "[100,200)": {
+          "nb_exploitations": 961,
+          "sau": 141739.21
+        },
+        "[200+)": {
+          "nb_exploitations": 810,
+          "sau": 245439.62
+        }
+      },
+      "total": {
+        "nb_exploitations": 3160,
+        "sau": 429116.83
+      }
+    },
+    {
+      "code": "28",
+      "region_name": "CENTRE VAL DE LOIRE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 511,
+          "sau": 3270.05
+        },
+        "[20,50)": {
+          "nb_exploitations": 270,
+          "sau": 9732.78
+        },
+        "[50,100)": {
+          "nb_exploitations": 694,
+          "sau": 53402.17
+        },
+        "[100,200)": {
+          "nb_exploitations": 1535,
+          "sau": 220876.65
+        },
+        "[200+)": {
+          "nb_exploitations": 593,
+          "sau": 159110.69
+        }
+      },
+      "total": {
+        "nb_exploitations": 3603,
+        "sau": 446392.34
+      }
+    },
+    {
+      "code": "36",
+      "region_name": "CENTRE VAL DE LOIRE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 852,
+          "sau": 5652.21
+        },
+        "[20,50)": {
+          "nb_exploitations": 345,
+          "sau": 11875.88
+        },
+        "[50,100)": {
+          "nb_exploitations": 616,
+          "sau": 47534.22
+        },
+        "[100,200)": {
+          "nb_exploitations": 1198,
+          "sau": 173818.13
+        },
+        "[200+)": {
+          "nb_exploitations": 727,
+          "sau": 207775.21
+        }
+      },
+      "total": {
+        "nb_exploitations": 3738,
+        "sau": 446655.65
+      }
+    },
+    {
+      "code": "37",
+      "region_name": "CENTRE VAL DE LOIRE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1064,
+          "sau": 7335.83
+        },
+        "[20,50)": {
+          "nb_exploitations": 485,
+          "sau": 16340.63
+        },
+        "[50,100)": {
+          "nb_exploitations": 643,
+          "sau": 47740.86
+        },
+        "[100,200)": {
+          "nb_exploitations": 1003,
+          "sau": 143607.5
+        },
+        "[200+)": {
+          "nb_exploitations": 424,
+          "sau": 114473.66
+        }
+      },
+      "total": {
+        "nb_exploitations": 3619,
+        "sau": 329498.48
+      }
+    },
+    {
+      "code": "41",
+      "region_name": "CENTRE VAL DE LOIRE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 694,
+          "sau": 4774.87
+        },
+        "[20,50)": {
+          "nb_exploitations": 329,
+          "sau": 11300.26
+        },
+        "[50,100)": {
+          "nb_exploitations": 492,
+          "sau": 37243.81
+        },
+        "[100,200)": {
+          "nb_exploitations": 897,
+          "sau": 129805.83
+        },
+        "[200+)": {
+          "nb_exploitations": 388,
+          "sau": 101312.85
+        }
+      },
+      "total": {
+        "nb_exploitations": 2800,
+        "sau": 284437.62
+      }
+    },
+    {
+      "code": "45",
+      "region_name": "CENTRE VAL DE LOIRE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 550,
+          "sau": 2993.3
+        },
+        "[20,50)": {
+          "nb_exploitations": 272,
+          "sau": 9471.82
+        },
+        "[50,100)": {
+          "nb_exploitations": 568,
+          "sau": 43920.44
+        },
+        "[100,200)": {
+          "nb_exploitations": 1135,
+          "sau": 161976.86
+        },
+        "[200+)": {
+          "nb_exploitations": 474,
+          "sau": 130180.18
+        }
+      },
+      "total": {
+        "nb_exploitations": 2999,
+        "sau": 348542.6
+      }
+    },
+    {
+      "code": "2A",
+      "region_name": "CORSE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 333,
+          "sau": 2213.02
+        },
+        "[20,50)": {
+          "nb_exploitations": 212,
+          "sau": 7340.21
+        },
+        "[50,100)": {
+          "nb_exploitations": 262,
+          "sau": 18811.82
+        },
+        "[100,200)": {
+          "nb_exploitations": 156,
+          "sau": 20403.99
+        },
+        "[200+)": {
+          "nb_exploitations": 53,
+          "sau": 14242.41
+        }
+      },
+      "total": {
+        "nb_exploitations": 1016,
+        "sau": 63011.45
+      }
+    },
+    {
+      "code": "2B",
+      "region_name": "CORSE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 713,
+          "sau": 4681.65
+        },
+        "[20,50)": {
+          "nb_exploitations": 431,
+          "sau": 14805.58
+        },
+        "[50,100)": {
+          "nb_exploitations": 466,
+          "sau": 32641.23
+        },
+        "[100,200)": {
+          "nb_exploitations": 248,
+          "sau": 32877.79
+        },
+        "[200+)": {
+          "nb_exploitations": 62,
+          "sau": 19075.4
+        }
+      },
+      "total": {
+        "nb_exploitations": 1920,
+        "sau": 104081.65
+      }
+    },
+    {
+      "code": "08",
+      "region_name": "GRAND EST",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 460,
+          "sau": 3012.37
+        },
+        "[20,50)": {
+          "nb_exploitations": 259,
+          "sau": 9309.22
+        },
+        "[50,100)": {
+          "nb_exploitations": 528,
+          "sau": 40260.0
+        },
+        "[100,200)": {
+          "nb_exploitations": 955,
+          "sau": 136664.08
+        },
+        "[200+)": {
+          "nb_exploitations": 421,
+          "sau": 115787.64
+        }
+      },
+      "total": {
+        "nb_exploitations": 2623,
+        "sau": 305033.31
+      }
+    },
+    {
+      "code": "10",
+      "region_name": "GRAND EST",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 2450,
+          "sau": 8246.94
+        },
+        "[20,50)": {
+          "nb_exploitations": 258,
+          "sau": 9065.68
+        },
+        "[50,100)": {
+          "nb_exploitations": 523,
+          "sau": 39903.72
+        },
+        "[100,200)": {
+          "nb_exploitations": 1076,
+          "sau": 155733.21
+        },
+        "[200+)": {
+          "nb_exploitations": 578,
+          "sau": 161735.1
+        }
+      },
+      "total": {
+        "nb_exploitations": 4885,
+        "sau": 374684.65
+      }
+    },
+    {
+      "code": "51",
+      "region_name": "GRAND EST",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 9340,
+          "sau": 20996.44
+        },
+        "[20,50)": {
+          "nb_exploitations": 457,
+          "sau": 15922.71
+        },
+        "[50,100)": {
+          "nb_exploitations": 999,
+          "sau": 76596.62
+        },
+        "[100,200)": {
+          "nb_exploitations": 1719,
+          "sau": 245406.49
+        },
+        "[200+)": {
+          "nb_exploitations": 716,
+          "sau": 198257.03
+        }
+      },
+      "total": {
+        "nb_exploitations": 13231,
+        "sau": 557179.29
+      }
+    },
+    {
+      "code": "52",
+      "region_name": "GRAND EST",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 330,
+          "sau": 1846.29
+        },
+        "[20,50)": {
+          "nb_exploitations": 107,
+          "sau": 3751.57
+        },
+        "[50,100)": {
+          "nb_exploitations": 205,
+          "sau": 15956.81
+        },
+        "[100,200)": {
+          "nb_exploitations": 555,
+          "sau": 81964.41
+        },
+        "[200+)": {
+          "nb_exploitations": 653,
+          "sau": 211407.49
+        }
+      },
+      "total": {
+        "nb_exploitations": 1850,
+        "sau": 314926.57
+      }
+    },
+    {
+      "code": "54",
+      "region_name": "GRAND EST",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 369,
+          "sau": 2491.69
+        },
+        "[20,50)": {
+          "nb_exploitations": 171,
+          "sau": 5650.71
+        },
+        "[50,100)": {
+          "nb_exploitations": 332,
+          "sau": 25664.71
+        },
+        "[100,200)": {
+          "nb_exploitations": 773,
+          "sau": 113007.73
+        },
+        "[200+)": {
+          "nb_exploitations": 441,
+          "sau": 125261.72
+        }
+      },
+      "total": {
+        "nb_exploitations": 2086,
+        "sau": 272076.56
+      }
+    },
+    {
+      "code": "55",
+      "region_name": "GRAND EST",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 369,
+          "sau": 2386.0
+        },
+        "[20,50)": {
+          "nb_exploitations": 175,
+          "sau": 6025.96
+        },
+        "[50,100)": {
+          "nb_exploitations": 338,
+          "sau": 25958.93
+        },
+        "[100,200)": {
+          "nb_exploitations": 806,
+          "sau": 118500.46
+        },
+        "[200+)": {
+          "nb_exploitations": 599,
+          "sau": 177397.74
+        }
+      },
+      "total": {
+        "nb_exploitations": 2287,
+        "sau": 330269.09
+      }
+    },
+    {
+      "code": "57",
+      "region_name": "GRAND EST",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 721,
+          "sau": 5170.3
+        },
+        "[20,50)": {
+          "nb_exploitations": 373,
+          "sau": 12442.85
+        },
+        "[50,100)": {
+          "nb_exploitations": 471,
+          "sau": 35299.21
+        },
+        "[100,200)": {
+          "nb_exploitations": 822,
+          "sau": 118947.74
+        },
+        "[200+)": {
+          "nb_exploitations": 491,
+          "sau": 147489.73
+        }
+      },
+      "total": {
+        "nb_exploitations": 2878,
+        "sau": 319349.83
+      }
+    },
+    {
+      "code": "67",
+      "region_name": "GRAND EST",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 2430,
+          "sau": 16051.08
+        },
+        "[20,50)": {
+          "nb_exploitations": 1063,
+          "sau": 35186.97
+        },
+        "[50,100)": {
+          "nb_exploitations": 827,
+          "sau": 58426.56
+        },
+        "[100,200)": {
+          "nb_exploitations": 495,
+          "sau": 66670.48
+        },
+        "[200+)": {
+          "nb_exploitations": 73,
+          "sau": 19878.11
+        }
+      },
+      "total": {
+        "nb_exploitations": 4888,
+        "sau": 196213.2
+      }
+    },
+    {
+      "code": "68",
+      "region_name": "GRAND EST",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 2452,
+          "sau": 13843.73
+        },
+        "[20,50)": {
+          "nb_exploitations": 697,
+          "sau": 23330.25
+        },
+        "[50,100)": {
+          "nb_exploitations": 599,
+          "sau": 43336.18
+        },
+        "[100,200)": {
+          "nb_exploitations": 338,
+          "sau": 44855.39
+        },
+        "[200+)": {
+          "nb_exploitations": 39,
+          "sau": 10079.35
+        }
+      },
+      "total": {
+        "nb_exploitations": 4125,
+        "sau": 135444.9
+      }
+    },
+    {
+      "code": "88",
+      "region_name": "GRAND EST",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 595,
+          "sau": 3776.48
+        },
+        "[20,50)": {
+          "nb_exploitations": 256,
+          "sau": 8624.48
+        },
+        "[50,100)": {
+          "nb_exploitations": 398,
+          "sau": 30036.74
+        },
+        "[100,200)": {
+          "nb_exploitations": 574,
+          "sau": 83627.98
+        },
+        "[200+)": {
+          "nb_exploitations": 313,
+          "sau": 93440.16
+        }
+      },
+      "total": {
+        "nb_exploitations": 2136,
+        "sau": 219505.84
+      }
+    },
+    {
+      "code": "02",
+      "region_name": "HAUTS DE FRANCE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1276,
+          "sau": 5947.36
+        },
+        "[20,50)": {
+          "nb_exploitations": 341,
+          "sau": 12204.87
+        },
+        "[50,100)": {
+          "nb_exploitations": 787,
+          "sau": 59809.05
+        },
+        "[100,200)": {
+          "nb_exploitations": 1235,
+          "sau": 181987.56
+        },
+        "[200+)": {
+          "nb_exploitations": 833,
+          "sau": 233977.33
+        }
+      },
+      "total": {
+        "nb_exploitations": 4472,
+        "sau": 493926.17
+      }
+    },
+    {
+      "code": "59",
+      "region_name": "HAUTS DE FRANCE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1686,
+          "sau": 11151.62
+        },
+        "[20,50)": {
+          "nb_exploitations": 1319,
+          "sau": 46373.79
+        },
+        "[50,100)": {
+          "nb_exploitations": 1610,
+          "sau": 116413.67
+        },
+        "[100,200)": {
+          "nb_exploitations": 972,
+          "sau": 132465.4
+        },
+        "[200+)": {
+          "nb_exploitations": 179,
+          "sau": 45227.04
+        }
+      },
+      "total": {
+        "nb_exploitations": 5766,
+        "sau": 351631.52
+      }
+    },
+    {
+      "code": "60",
+      "region_name": "HAUTS DE FRANCE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 483,
+          "sau": 2813.56
+        },
+        "[20,50)": {
+          "nb_exploitations": 252,
+          "sau": 9011.96
+        },
+        "[50,100)": {
+          "nb_exploitations": 622,
+          "sau": 48008.88
+        },
+        "[100,200)": {
+          "nb_exploitations": 993,
+          "sau": 142559.6
+        },
+        "[200+)": {
+          "nb_exploitations": 588,
+          "sau": 163145.18
+        }
+      },
+      "total": {
+        "nb_exploitations": 2938,
+        "sau": 365539.18
+      }
+    },
+    {
+      "code": "62",
+      "region_name": "HAUTS DE FRANCE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1079,
+          "sau": 7354.95
+        },
+        "[20,50)": {
+          "nb_exploitations": 1098,
+          "sau": 39106.48
+        },
+        "[50,100)": {
+          "nb_exploitations": 1802,
+          "sau": 132131.87
+        },
+        "[100,200)": {
+          "nb_exploitations": 1422,
+          "sau": 195529.19
+        },
+        "[200+)": {
+          "nb_exploitations": 332,
+          "sau": 83786.06
+        }
+      },
+      "total": {
+        "nb_exploitations": 5733,
+        "sau": 457908.55
+      }
+    },
+    {
+      "code": "80",
+      "region_name": "HAUTS DE FRANCE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 989,
+          "sau": 5318.62
+        },
+        "[20,50)": {
+          "nb_exploitations": 522,
+          "sau": 18938.77
+        },
+        "[50,100)": {
+          "nb_exploitations": 1067,
+          "sau": 80982.19
+        },
+        "[100,200)": {
+          "nb_exploitations": 1415,
+          "sau": 200287.44
+        },
+        "[200+)": {
+          "nb_exploitations": 561,
+          "sau": 154064.99
+        }
+      },
+      "total": {
+        "nb_exploitations": 4554,
+        "sau": 459592.01
+      }
+    },
+    {
+      "code": "75",
+      "region_name": "ILE DE FRANCE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 8,
+          "sau": 1.01
+        }
+      },
+      "total": {
+        "nb_exploitations": 8,
+        "sau": 1.01
+      }
+    },
+    {
+      "code": "77",
+      "region_name": "ILE DE FRANCE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 323,
+          "sau": 1789.19
+        },
+        "[20,50)": {
+          "nb_exploitations": 169,
+          "sau": 5925.73
+        },
+        "[50,100)": {
+          "nb_exploitations": 372,
+          "sau": 28688.64
+        },
+        "[100,200)": {
+          "nb_exploitations": 903,
+          "sau": 133747.26
+        },
+        "[200+)": {
+          "nb_exploitations": 597,
+          "sau": 164457.91
+        }
+      },
+      "total": {
+        "nb_exploitations": 2364,
+        "sau": 334608.73
+      }
+    },
+    {
+      "code": "78",
+      "region_name": "ILE DE FRANCE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 198,
+          "sau": 1152.63
+        },
+        "[20,50)": {
+          "nb_exploitations": 90,
+          "sau": 3048.75
+        },
+        "[50,100)": {
+          "nb_exploitations": 112,
+          "sau": 8542.27
+        },
+        "[100,200)": {
+          "nb_exploitations": 281,
+          "sau": 41185.17
+        },
+        "[200+)": {
+          "nb_exploitations": 126,
+          "sau": 35362.63
+        }
+      },
+      "total": {
+        "nb_exploitations": 807,
+        "sau": 89291.45
+      }
+    },
+    {
+      "code": "91",
+      "region_name": "ILE DE FRANCE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 133,
+          "sau": 687.34
+        },
+        "[20,50)": {
+          "nb_exploitations": 43,
+          "sau": 1460.63
+        },
+        "[50,100)": {
+          "nb_exploitations": 112,
+          "sau": 8314.75
+        },
+        "[100,200)": {
+          "nb_exploitations": 245,
+          "sau": 36164.76
+        },
+        "[200+)": {
+          "nb_exploitations": 132,
+          "sau": 36450.15
+        }
+      },
+      "total": {
+        "nb_exploitations": 665,
+        "sau": 83077.63
+      }
+    },
+    {
+      "code": "92",
+      "region_name": "ILE DE FRANCE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 6,
+          "sau": 4.6
+        }
+      },
+      "total": {
+        "nb_exploitations": 6,
+        "sau": 4.6
+      }
+    },
+    {
+      "code": "93",
+      "region_name": "ILE DE FRANCE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 12,
+          "sau": 4.39
+        }
+      },
+      "total": {
+        "nb_exploitations": 16,
+        "sau": 526.81
+      }
+    },
+    {
+      "code": "94",
+      "region_name": "ILE DE FRANCE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 31,
+          "sau": 103.2
+        },
+        "[20,50)": {
+          "nb_exploitations": 6,
+          "sau": 158.68
+        }
+      },
+      "total": {
+        "nb_exploitations": 41,
+        "sau": 1037.63
+      }
+    },
+    {
+      "code": "95",
+      "region_name": "ILE DE FRANCE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 136,
+          "sau": 837.87
+        },
+        "[20,50)": {
+          "nb_exploitations": 61,
+          "sau": 2012.41
+        },
+        "[50,100)": {
+          "nb_exploitations": 87,
+          "sau": 6649.15
+        },
+        "[100,200)": {
+          "nb_exploitations": 143,
+          "sau": 20645.87
+        },
+        "[200+)": {
+          "nb_exploitations": 91,
+          "sau": 25333.51
+        }
+      },
+      "total": {
+        "nb_exploitations": 518,
+        "sau": 55478.81
+      }
+    },
+    {
+      "code": "14",
+      "region_name": "NORMANDIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1910,
+          "sau": 13104.99
+        },
+        "[20,50)": {
+          "nb_exploitations": 759,
+          "sau": 25788.09
+        },
+        "[50,100)": {
+          "nb_exploitations": 1076,
+          "sau": 80064.17
+        },
+        "[100,200)": {
+          "nb_exploitations": 1186,
+          "sau": 165637.06
+        },
+        "[200+)": {
+          "nb_exploitations": 336,
+          "sau": 88343.21
+        }
+      },
+      "total": {
+        "nb_exploitations": 5267,
+        "sau": 372937.52
+      }
+    },
+    {
+      "code": "27",
+      "region_name": "NORMANDIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 943,
+          "sau": 6491.15
+        },
+        "[20,50)": {
+          "nb_exploitations": 373,
+          "sau": 12274.31
+        },
+        "[50,100)": {
+          "nb_exploitations": 741,
+          "sau": 56126.83
+        },
+        "[100,200)": {
+          "nb_exploitations": 1149,
+          "sau": 164939.08
+        },
+        "[200+)": {
+          "nb_exploitations": 490,
+          "sau": 130052.25
+        }
+      },
+      "total": {
+        "nb_exploitations": 3696,
+        "sau": 369883.62
+      }
+    },
+    {
+      "code": "50",
+      "region_name": "NORMANDIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 3660,
+          "sau": 22178.0
+        },
+        "[20,50)": {
+          "nb_exploitations": 1077,
+          "sau": 36767.16
+        },
+        "[50,100)": {
+          "nb_exploitations": 1717,
+          "sau": 127477.31
+        },
+        "[100,200)": {
+          "nb_exploitations": 1411,
+          "sau": 191555.72
+        },
+        "[200+)": {
+          "nb_exploitations": 173,
+          "sau": 42893.54
+        }
+      },
+      "total": {
+        "nb_exploitations": 8038,
+        "sau": 420871.73
+      }
+    },
+    {
+      "code": "61",
+      "region_name": "NORMANDIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1458,
+          "sau": 9568.82
+        },
+        "[20,50)": {
+          "nb_exploitations": 603,
+          "sau": 20084.36
+        },
+        "[50,100)": {
+          "nb_exploitations": 950,
+          "sau": 71771.02
+        },
+        "[100,200)": {
+          "nb_exploitations": 1252,
+          "sau": 177967.27
+        },
+        "[200+)": {
+          "nb_exploitations": 451,
+          "sau": 118507.15
+        }
+      },
+      "total": {
+        "nb_exploitations": 4714,
+        "sau": 397898.62
+      }
+    },
+    {
+      "code": "76",
+      "region_name": "NORMANDIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1528,
+          "sau": 9273.86
+        },
+        "[20,50)": {
+          "nb_exploitations": 522,
+          "sau": 18172.99
+        },
+        "[50,100)": {
+          "nb_exploitations": 1109,
+          "sau": 83294.85
+        },
+        "[100,200)": {
+          "nb_exploitations": 1260,
+          "sau": 179090.58
+        },
+        "[200+)": {
+          "nb_exploitations": 376,
+          "sau": 101432.03
+        }
+      },
+      "total": {
+        "nb_exploitations": 4795,
+        "sau": 391264.31
+      }
+    },
+    {
+      "code": "16",
+      "region_name": "NOUVELLE AQUITAINE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1361,
+          "sau": 10070.24
+        },
+        "[20,50)": {
+          "nb_exploitations": 1026,
+          "sau": 35509.39
+        },
+        "[50,100)": {
+          "nb_exploitations": 1150,
+          "sau": 82676.21
+        },
+        "[100,200)": {
+          "nb_exploitations": 1039,
+          "sau": 144802.85
+        },
+        "[200+)": {
+          "nb_exploitations": 304,
+          "sau": 83609.87
+        }
+      },
+      "total": {
+        "nb_exploitations": 4880,
+        "sau": 356668.56
+      }
+    },
+    {
+      "code": "17",
+      "region_name": "NOUVELLE AQUITAINE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1739,
+          "sau": 11410.57
+        },
+        "[20,50)": {
+          "nb_exploitations": 1090,
+          "sau": 37280.53
+        },
+        "[50,100)": {
+          "nb_exploitations": 1334,
+          "sau": 98048.86
+        },
+        "[100,200)": {
+          "nb_exploitations": 1259,
+          "sau": 176016.85
+        },
+        "[200+)": {
+          "nb_exploitations": 385,
+          "sau": 102510.45
+        }
+      },
+      "total": {
+        "nb_exploitations": 5807,
+        "sau": 425267.26
+      }
+    },
+    {
+      "code": "19",
+      "region_name": "NOUVELLE AQUITAINE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1461,
+          "sau": 10887.81
+        },
+        "[20,50)": {
+          "nb_exploitations": 809,
+          "sau": 27354.26
+        },
+        "[50,100)": {
+          "nb_exploitations": 947,
+          "sau": 68342.57
+        },
+        "[100,200)": {
+          "nb_exploitations": 660,
+          "sau": 90003.69
+        },
+        "[200+)": {
+          "nb_exploitations": 121,
+          "sau": 30652.86
+        }
+      },
+      "total": {
+        "nb_exploitations": 3998,
+        "sau": 227241.19
+      }
+    },
+    {
+      "code": "23",
+      "region_name": "NOUVELLE AQUITAINE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1016,
+          "sau": 6498.49
+        },
+        "[20,50)": {
+          "nb_exploitations": 342,
+          "sau": 11859.85
+        },
+        "[50,100)": {
+          "nb_exploitations": 681,
+          "sau": 51327.19
+        },
+        "[100,200)": {
+          "nb_exploitations": 1062,
+          "sau": 150818.9
+        },
+        "[200+)": {
+          "nb_exploitations": 369,
+          "sau": 96032.14
+        }
+      },
+      "total": {
+        "nb_exploitations": 3470,
+        "sau": 316536.57
+      }
+    },
+    {
+      "code": "24",
+      "region_name": "NOUVELLE AQUITAINE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 2972,
+          "sau": 20265.34
+        },
+        "[20,50)": {
+          "nb_exploitations": 1335,
+          "sau": 44594.37
+        },
+        "[50,100)": {
+          "nb_exploitations": 1095,
+          "sau": 78385.72
+        },
+        "[100,200)": {
+          "nb_exploitations": 737,
+          "sau": 102814.81
+        },
+        "[200+)": {
+          "nb_exploitations": 191,
+          "sau": 50582.02
+        }
+      },
+      "total": {
+        "nb_exploitations": 6330,
+        "sau": 296642.26
+      }
+    },
+    {
+      "code": "33",
+      "region_name": "NOUVELLE AQUITAINE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 4102,
+          "sau": 30951.74
+        },
+        "[20,50)": {
+          "nb_exploitations": 1690,
+          "sau": 53927.38
+        },
+        "[50,100)": {
+          "nb_exploitations": 717,
+          "sau": 50154.76
+        },
+        "[100,200)": {
+          "nb_exploitations": 368,
+          "sau": 49665.34
+        },
+        "[200+)": {
+          "nb_exploitations": 146,
+          "sau": 48694.52
+        }
+      },
+      "total": {
+        "nb_exploitations": 7023,
+        "sau": 233393.74
+      }
+    },
+    {
+      "code": "40",
+      "region_name": "NOUVELLE AQUITAINE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1929,
+          "sau": 11533.82
+        },
+        "[20,50)": {
+          "nb_exploitations": 996,
+          "sau": 34110.7
+        },
+        "[50,100)": {
+          "nb_exploitations": 992,
+          "sau": 70183.51
+        },
+        "[100,200)": {
+          "nb_exploitations": 425,
+          "sau": 56897.53
+        },
+        "[200+)": {
+          "nb_exploitations": 121,
+          "sau": 37736.05
+        }
+      },
+      "total": {
+        "nb_exploitations": 4463,
+        "sau": 210461.61
+      }
+    },
+    {
+      "code": "47",
+      "region_name": "NOUVELLE AQUITAINE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 2655,
+          "sau": 17178.71
+        },
+        "[20,50)": {
+          "nb_exploitations": 1229,
+          "sau": 41129.05
+        },
+        "[50,100)": {
+          "nb_exploitations": 1050,
+          "sau": 75355.75
+        },
+        "[100,200)": {
+          "nb_exploitations": 671,
+          "sau": 91291.17
+        },
+        "[200+)": {
+          "nb_exploitations": 196,
+          "sau": 55149.35
+        }
+      },
+      "total": {
+        "nb_exploitations": 5801,
+        "sau": 280104.03
+      }
+    },
+    {
+      "code": "64",
+      "region_name": "NOUVELLE AQUITAINE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 4149,
+          "sau": 31479.69
+        },
+        "[20,50)": {
+          "nb_exploitations": 3374,
+          "sau": 112956.7
+        },
+        "[50,100)": {
+          "nb_exploitations": 1873,
+          "sau": 126808.58
+        },
+        "[100,200)": {
+          "nb_exploitations": 368,
+          "sau": 46203.09
+        },
+        "[200+)": {
+          "nb_exploitations": 20,
+          "sau": 5294.78
+        }
+      },
+      "total": {
+        "nb_exploitations": 9784,
+        "sau": 322742.84
+      }
+    },
+    {
+      "code": "79",
+      "region_name": "NOUVELLE AQUITAINE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1283,
+          "sau": 6914.19
+        },
+        "[20,50)": {
+          "nb_exploitations": 564,
+          "sau": 20200.61
+        },
+        "[50,100)": {
+          "nb_exploitations": 1284,
+          "sau": 96732.65
+        },
+        "[100,200)": {
+          "nb_exploitations": 1423,
+          "sau": 199956.6
+        },
+        "[200+)": {
+          "nb_exploitations": 442,
+          "sau": 121986.41
+        }
+      },
+      "total": {
+        "nb_exploitations": 4996,
+        "sau": 445790.46
+      }
+    },
+    {
+      "code": "86",
+      "region_name": "NOUVELLE AQUITAINE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 829,
+          "sau": 4991.61
+        },
+        "[20,50)": {
+          "nb_exploitations": 386,
+          "sau": 13503.54
+        },
+        "[50,100)": {
+          "nb_exploitations": 782,
+          "sau": 59065.27
+        },
+        "[100,200)": {
+          "nb_exploitations": 1350,
+          "sau": 193558.33
+        },
+        "[200+)": {
+          "nb_exploitations": 697,
+          "sau": 199898.67
+        }
+      },
+      "total": {
+        "nb_exploitations": 4044,
+        "sau": 471017.42
+      }
+    },
+    {
+      "code": "87",
+      "region_name": "NOUVELLE AQUITAINE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1141,
+          "sau": 8146.42
+        },
+        "[20,50)": {
+          "nb_exploitations": 516,
+          "sau": 17425.8
+        },
+        "[50,100)": {
+          "nb_exploitations": 797,
+          "sau": 59495.82
+        },
+        "[100,200)": {
+          "nb_exploitations": 860,
+          "sau": 121713.68
+        },
+        "[200+)": {
+          "nb_exploitations": 290,
+          "sau": 79224.45
+        }
+      },
+      "total": {
+        "nb_exploitations": 3604,
+        "sau": 286006.17
+      }
+    },
+    {
+      "code": "09",
+      "region_name": "OCCITANIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 863,
+          "sau": 6365.58
+        },
+        "[20,50)": {
+          "nb_exploitations": 476,
+          "sau": 16121.95
+        },
+        "[50,100)": {
+          "nb_exploitations": 456,
+          "sau": 32666.79
+        },
+        "[100,200)": {
+          "nb_exploitations": 356,
+          "sau": 48957.63
+        },
+        "[200+)": {
+          "nb_exploitations": 114,
+          "sau": 30840.59
+        }
+      },
+      "total": {
+        "nb_exploitations": 2265,
+        "sau": 134952.54
+      }
+    },
+    {
+      "code": "11",
+      "region_name": "OCCITANIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 3608,
+          "sau": 24654.23
+        },
+        "[20,50)": {
+          "nb_exploitations": 1221,
+          "sau": 39004.34
+        },
+        "[50,100)": {
+          "nb_exploitations": 662,
+          "sau": 46222.83
+        },
+        "[100,200)": {
+          "nb_exploitations": 469,
+          "sau": 65813.53
+        },
+        "[200+)": {
+          "nb_exploitations": 143,
+          "sau": 39873.0
+        }
+      },
+      "total": {
+        "nb_exploitations": 6103,
+        "sau": 215567.93
+      }
+    },
+    {
+      "code": "12",
+      "region_name": "OCCITANIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1808,
+          "sau": 13804.97
+        },
+        "[20,50)": {
+          "nb_exploitations": 1878,
+          "sau": 66625.35
+        },
+        "[50,100)": {
+          "nb_exploitations": 2388,
+          "sau": 171545.8
+        },
+        "[100,200)": {
+          "nb_exploitations": 1250,
+          "sau": 168388.49
+        },
+        "[200+)": {
+          "nb_exploitations": 313,
+          "sau": 88592.36
+        }
+      },
+      "total": {
+        "nb_exploitations": 7637,
+        "sau": 508956.97
+      }
+    },
+    {
+      "code": "30",
+      "region_name": "OCCITANIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 3320,
+          "sau": 20742.03
+        },
+        "[20,50)": {
+          "nb_exploitations": 1159,
+          "sau": 37590.3
+        },
+        "[50,100)": {
+          "nb_exploitations": 493,
+          "sau": 34206.55
+        },
+        "[100,200)": {
+          "nb_exploitations": 256,
+          "sau": 34809.31
+        },
+        "[200+)": {
+          "nb_exploitations": 98,
+          "sau": 34759.87
+        }
+      },
+      "total": {
+        "nb_exploitations": 5326,
+        "sau": 162108.06
+      }
+    },
+    {
+      "code": "31",
+      "region_name": "OCCITANIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 2349,
+          "sau": 16246.49
+        },
+        "[20,50)": {
+          "nb_exploitations": 1079,
+          "sau": 36438.91
+        },
+        "[50,100)": {
+          "nb_exploitations": 957,
+          "sau": 69749.21
+        },
+        "[100,200)": {
+          "nb_exploitations": 896,
+          "sau": 125456.77
+        },
+        "[200+)": {
+          "nb_exploitations": 291,
+          "sau": 80112.94
+        }
+      },
+      "total": {
+        "nb_exploitations": 5572,
+        "sau": 328004.32
+      }
+    },
+    {
+      "code": "32",
+      "region_name": "OCCITANIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 2088,
+          "sau": 13595.77
+        },
+        "[20,50)": {
+          "nb_exploitations": 1324,
+          "sau": 45864.56
+        },
+        "[50,100)": {
+          "nb_exploitations": 1625,
+          "sau": 118472.94
+        },
+        "[100,200)": {
+          "nb_exploitations": 1313,
+          "sau": 179741.07
+        },
+        "[200+)": {
+          "nb_exploitations": 330,
+          "sau": 90824.89
+        }
+      },
+      "total": {
+        "nb_exploitations": 6680,
+        "sau": 448499.23
+      }
+    },
+    {
+      "code": "34",
+      "region_name": "OCCITANIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 5956,
+          "sau": 34950.67
+        },
+        "[20,50)": {
+          "nb_exploitations": 1257,
+          "sau": 38372.75
+        },
+        "[50,100)": {
+          "nb_exploitations": 360,
+          "sau": 24720.26
+        },
+        "[100,200)": {
+          "nb_exploitations": 192,
+          "sau": 26991.6
+        },
+        "[200+)": {
+          "nb_exploitations": 126,
+          "sau": 50754.39
+        }
+      },
+      "total": {
+        "nb_exploitations": 7891,
+        "sau": 175789.67
+      }
+    },
+    {
+      "code": "46",
+      "region_name": "OCCITANIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1529,
+          "sau": 10956.63
+        },
+        "[20,50)": {
+          "nb_exploitations": 917,
+          "sau": 31055.14
+        },
+        "[50,100)": {
+          "nb_exploitations": 804,
+          "sau": 57249.25
+        },
+        "[100,200)": {
+          "nb_exploitations": 496,
+          "sau": 68721.1
+        },
+        "[200+)": {
+          "nb_exploitations": 171,
+          "sau": 50237.15
+        }
+      },
+      "total": {
+        "nb_exploitations": 3917,
+        "sau": 218219.27
+      }
+    },
+    {
+      "code": "48",
+      "region_name": "OCCITANIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 365,
+          "sau": 2699.47
+        },
+        "[20,50)": {
+          "nb_exploitations": 400,
+          "sau": 14110.98
+        },
+        "[50,100)": {
+          "nb_exploitations": 653,
+          "sau": 48079.36
+        },
+        "[100,200)": {
+          "nb_exploitations": 671,
+          "sau": 94019.04
+        },
+        "[200+)": {
+          "nb_exploitations": 271,
+          "sau": 81115.98
+        }
+      },
+      "total": {
+        "nb_exploitations": 2360,
+        "sau": 240024.83
+      }
+    },
+    {
+      "code": "65",
+      "region_name": "OCCITANIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 2038,
+          "sau": 14691.93
+        },
+        "[20,50)": {
+          "nb_exploitations": 1118,
+          "sau": 36816.33
+        },
+        "[50,100)": {
+          "nb_exploitations": 662,
+          "sau": 45499.53
+        },
+        "[100,200)": {
+          "nb_exploitations": 198,
+          "sau": 25355.82
+        },
+        "[200+)": {
+          "nb_exploitations": 17,
+          "sau": 4157.58
+        }
+      },
+      "total": {
+        "nb_exploitations": 4033,
+        "sau": 126521.19
+      }
+    },
+    {
+      "code": "66",
+      "region_name": "OCCITANIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 2407,
+          "sau": 12948.58
+        },
+        "[20,50)": {
+          "nb_exploitations": 479,
+          "sau": 14728.15
+        },
+        "[50,100)": {
+          "nb_exploitations": 203,
+          "sau": 14002.32
+        },
+        "[100,200)": {
+          "nb_exploitations": 97,
+          "sau": 13257.14
+        },
+        "[200+)": {
+          "nb_exploitations": 41,
+          "sau": 13084.66
+        }
+      },
+      "total": {
+        "nb_exploitations": 3227,
+        "sau": 68020.85
+      }
+    },
+    {
+      "code": "81",
+      "region_name": "OCCITANIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1720,
+          "sau": 11601.12
+        },
+        "[20,50)": {
+          "nb_exploitations": 1005,
+          "sau": 34923.04
+        },
+        "[50,100)": {
+          "nb_exploitations": 1312,
+          "sau": 94575.26
+        },
+        "[100,200)": {
+          "nb_exploitations": 834,
+          "sau": 112749.39
+        },
+        "[200+)": {
+          "nb_exploitations": 161,
+          "sau": 43054.4
+        }
+      },
+      "total": {
+        "nb_exploitations": 5032,
+        "sau": 296903.21
+      }
+    },
+    {
+      "code": "82",
+      "region_name": "OCCITANIE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1820,
+          "sau": 12881.66
+        },
+        "[20,50)": {
+          "nb_exploitations": 1024,
+          "sau": 34653.44
+        },
+        "[50,100)": {
+          "nb_exploitations": 864,
+          "sau": 61449.29
+        },
+        "[100,200)": {
+          "nb_exploitations": 499,
+          "sau": 68550.96
+        },
+        "[200+)": {
+          "nb_exploitations": 120,
+          "sau": 30108.03
+        }
+      },
+      "total": {
+        "nb_exploitations": 4327,
+        "sau": 207643.38
+      }
+    },
+    {
+      "code": "44",
+      "region_name": "PAYS DE LA LOIRE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1331,
+          "sau": 9143.5
+        },
+        "[20,50)": {
+          "nb_exploitations": 774,
+          "sau": 26397.53
+        },
+        "[50,100)": {
+          "nb_exploitations": 1152,
+          "sau": 87182.22
+        },
+        "[100,200)": {
+          "nb_exploitations": 1215,
+          "sau": 171293.59
+        },
+        "[200+)": {
+          "nb_exploitations": 413,
+          "sau": 114667.99
+        }
+      },
+      "total": {
+        "nb_exploitations": 4885,
+        "sau": 408684.83
+      }
+    },
+    {
+      "code": "49",
+      "region_name": "PAYS DE LA LOIRE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1595,
+          "sau": 11118.2
+        },
+        "[20,50)": {
+          "nb_exploitations": 1232,
+          "sau": 42463.59
+        },
+        "[50,100)": {
+          "nb_exploitations": 1756,
+          "sau": 127811.0
+        },
+        "[100,200)": {
+          "nb_exploitations": 1388,
+          "sau": 190319.67
+        },
+        "[200+)": {
+          "nb_exploitations": 310,
+          "sau": 79866.0
+        }
+      },
+      "total": {
+        "nb_exploitations": 6281,
+        "sau": 451578.46
+      }
+    },
+    {
+      "code": "53",
+      "region_name": "PAYS DE LA LOIRE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1881,
+          "sau": 10693.92
+        },
+        "[20,50)": {
+          "nb_exploitations": 980,
+          "sau": 35547.8
+        },
+        "[50,100)": {
+          "nb_exploitations": 1814,
+          "sau": 133178.32
+        },
+        "[100,200)": {
+          "nb_exploitations": 1231,
+          "sau": 165230.84
+        },
+        "[200+)": {
+          "nb_exploitations": 166,
+          "sau": 41182.68
+        }
+      },
+      "total": {
+        "nb_exploitations": 6072,
+        "sau": 385833.56
+      }
+    },
+    {
+      "code": "72",
+      "region_name": "PAYS DE LA LOIRE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1158,
+          "sau": 7622.94
+        },
+        "[20,50)": {
+          "nb_exploitations": 501,
+          "sau": 17327.95
+        },
+        "[50,100)": {
+          "nb_exploitations": 931,
+          "sau": 71266.52
+        },
+        "[100,200)": {
+          "nb_exploitations": 1355,
+          "sau": 189746.63
+        },
+        "[200+)": {
+          "nb_exploitations": 315,
+          "sau": 80394.48
+        }
+      },
+      "total": {
+        "nb_exploitations": 4260,
+        "sau": 366358.52
+      }
+    },
+    {
+      "code": "85",
+      "region_name": "PAYS DE LA LOIRE",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 1057,
+          "sau": 5695.82
+        },
+        "[20,50)": {
+          "nb_exploitations": 608,
+          "sau": 21773.01
+        },
+        "[50,100)": {
+          "nb_exploitations": 1266,
+          "sau": 93961.92
+        },
+        "[100,200)": {
+          "nb_exploitations": 1467,
+          "sau": 207568.5
+        },
+        "[200+)": {
+          "nb_exploitations": 513,
+          "sau": 137881.8
+        }
+      },
+      "total": {
+        "nb_exploitations": 4911,
+        "sau": 466881.05
+      }
+    },
+    {
+      "code": "04",
+      "region_name": "PROVENCE ALPES COTE D AZUR",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 718,
+          "sau": 4226.16
+        },
+        "[20,50)": {
+          "nb_exploitations": 383,
+          "sau": 13156.58
+        },
+        "[50,100)": {
+          "nb_exploitations": 420,
+          "sau": 30853.03
+        },
+        "[100,200)": {
+          "nb_exploitations": 348,
+          "sau": 47882.76
+        },
+        "[200+)": {
+          "nb_exploitations": 195,
+          "sau": 62827.83
+        }
+      },
+      "total": {
+        "nb_exploitations": 2064,
+        "sau": 158946.36
+      }
+    },
+    {
+      "code": "05",
+      "region_name": "PROVENCE ALPES COTE D AZUR",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 580,
+          "sau": 3960.77
+        },
+        "[20,50)": {
+          "nb_exploitations": 385,
+          "sau": 13218.42
+        },
+        "[50,100)": {
+          "nb_exploitations": 404,
+          "sau": 28435.46
+        },
+        "[100,200)": {
+          "nb_exploitations": 217,
+          "sau": 29194.31
+        },
+        "[200+)": {
+          "nb_exploitations": 60,
+          "sau": 17169.84
+        }
+      },
+      "total": {
+        "nb_exploitations": 1646,
+        "sau": 91978.8
+      }
+    },
+    {
+      "code": "06",
+      "region_name": "PROVENCE ALPES COTE D AZUR",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 899,
+          "sau": 2012.76
+        },
+        "[20,50)": {
+          "nb_exploitations": 72,
+          "sau": 2370.51
+        },
+        "[50,100)": {
+          "nb_exploitations": 86,
+          "sau": 6079.26
+        },
+        "[100,200)": {
+          "nb_exploitations": 75,
+          "sau": 11102.33
+        },
+        "[200+)": {
+          "nb_exploitations": 60,
+          "sau": 19576.31
+        }
+      },
+      "total": {
+        "nb_exploitations": 1192,
+        "sau": 41141.17
+      }
+    },
+    {
+      "code": "13",
+      "region_name": "PROVENCE ALPES COTE D AZUR",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 2688,
+          "sau": 13598.39
+        },
+        "[20,50)": {
+          "nb_exploitations": 531,
+          "sau": 17164.43
+        },
+        "[50,100)": {
+          "nb_exploitations": 318,
+          "sau": 22663.56
+        },
+        "[100,200)": {
+          "nb_exploitations": 202,
+          "sau": 29107.0
+        },
+        "[200+)": {
+          "nb_exploitations": 164,
+          "sau": 63179.73
+        }
+      },
+      "total": {
+        "nb_exploitations": 3903,
+        "sau": 145713.11
+      }
+    },
+    {
+      "code": "83",
+      "region_name": "PROVENCE ALPES COTE D AZUR",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 3592,
+          "sau": 16070.9
+        },
+        "[20,50)": {
+          "nb_exploitations": 439,
+          "sau": 13792.63
+        },
+        "[50,100)": {
+          "nb_exploitations": 193,
+          "sau": 13229.03
+        },
+        "[100,200)": {
+          "nb_exploitations": 113,
+          "sau": 15565.55
+        },
+        "[200+)": {
+          "nb_exploitations": 54,
+          "sau": 19127.13
+        }
+      },
+      "total": {
+        "nb_exploitations": 4391,
+        "sau": 77785.24
+      }
+    },
+    {
+      "code": "84",
+      "region_name": "PROVENCE ALPES COTE D AZUR",
+      "by_class": {
+        "[0,20)": {
+          "nb_exploitations": 3246,
+          "sau": 21724.86
+        },
+        "[20,50)": {
+          "nb_exploitations": 1066,
+          "sau": 33898.67
+        },
+        "[50,100)": {
+          "nb_exploitations": 382,
+          "sau": 26235.26
+        },
+        "[100,200)": {
+          "nb_exploitations": 126,
+          "sau": 17137.92
+        },
+        "[200+)": {
+          "nb_exploitations": 40,
+          "sau": 13891.35
+        }
+      },
+      "total": {
+        "nb_exploitations": 4860,
+        "sau": 112888.06
+      }
+    }
+  ]
+}
