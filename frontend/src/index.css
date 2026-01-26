@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Agricultural Census Map Design System */
+
+@layer base {
+  :root {
+    /* Agricultural green palette */
+    --background: 120 8% 98%;
+    --foreground: 120 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 120 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 120 30% 10%;
+
+    /* Deep forest green */
+    --primary: 100 56% 21%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Lighter sage */
+    --secondary: 100 20% 94%;
+    --secondary-foreground: 100 56% 21%;
+
+    --muted: 100 10% 95%;
+    --muted-foreground: 100 10% 40%;
+
+    /* Vibrant grass green */
+    --accent: 100 55% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 100 10% 88%;
+    --input: 100 10% 88%;
+    --ring: 100 56% 21%;
+
+    --radius: 0.75rem;
+
+    /* Map specific colors */
+    --map-stroke: 100 10% 70%;
+    --map-hover: 100 40% 85%;
+    --tooltip-bg: 0 0% 100%;
+    
+    /* Gradient for choropleth */
+    --green-100: 100 50% 95%;
+    --green-200: 100 45% 85%;
+    --green-300: 100 40% 70%;
+    --green-400: 100 45% 50%;
+    --green-500: 100 50% 35%;
+    --green-600: 100 55% 25%;
+    --green-700: 100 60% 18%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 120 30% 10%;
+    --sidebar-primary: 100 56% 21%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 100 20% 94%;
+    --sidebar-accent-foreground: 100 56% 21%;
+    --sidebar-border: 100 10% 88%;
+    --sidebar-ring: 100 56% 21%;
+  }
+
+  .dark {
+    --background: 120 15% 8%;
+    --foreground: 100 10% 95%;
+
+    --card: 120 15% 12%;
+    --card-foreground: 100 10% 95%;
+
+    --popover: 120 15% 12%;
+    --popover-foreground: 100 10% 95%;
+
+    --primary: 100 45% 50%;
+    --primary-foreground: 120 30% 10%;
+
+    --secondary: 120 15% 18%;
+    --secondary-foreground: 100 10% 95%;
+
+    --muted: 120 15% 18%;
+    --muted-foreground: 100 10% 60%;
+
+    --accent: 100 45% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 15% 20%;
+    --input: 120 15% 20%;
+    --ring: 100 45% 50%;
+
+    --sidebar-background: 120 15% 10%;
+    --sidebar-foreground: 100 10% 95%;
+    --sidebar-primary: 100 45% 50%;
+    --sidebar-primary-foreground: 120 30% 10%;
+    --sidebar-accent: 120 15% 18%;
+    --sidebar-accent-foreground: 100 10% 95%;
+    --sidebar-border: 120 15% 20%;
+    --sidebar-ring: 100 45% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Sans', 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .map-container {
+    @apply relative w-full h-full;
+  }
+
+  .control-panel {
+    @apply bg-card border border-border rounded-xl shadow-lg p-5;
+  }
+
+  .legend-gradient {
+    background: linear-gradient(
+      to top,
+      hsl(100 50% 95%),
+      hsl(100 45% 85%),
+      hsl(100 40% 60%),
+      hsl(100 50% 35%),
+      hsl(100 60% 18%)
+    );
+  }
+
+  .stat-card {
+    @apply bg-card border border-border rounded-lg p-4 transition-all duration-200 hover:shadow-md;
+  }
+
+  .tooltip-box {
+    @apply bg-card border border-border rounded-lg shadow-xl p-4 pointer-events-none;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
