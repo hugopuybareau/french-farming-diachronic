@@ -195,7 +195,7 @@ export const FranceMap = ({ data }: FranceMapProps) => {
 
   if (loading) {
     return (
-      <div className="flex-1 flex items-center justify-center bg-muted/30">
+      <div className="absolute inset-0 flex items-center justify-center bg-muted/30">
         <div className="flex flex-col items-center gap-3 text-muted-foreground">
           <Loader2 className="h-8 w-8 animate-spin" />
           <p className="text-sm">Chargement de la carte...</p>
@@ -205,7 +205,7 @@ export const FranceMap = ({ data }: FranceMapProps) => {
   }
 
   return (
-    <div ref={containerRef} className="flex-1 relative">
+    <div ref={containerRef} className="absolute inset-0">
       {/* Back button when zoomed into a region */}
       {selectedRegion && level === 'departments' && (
         <Button
