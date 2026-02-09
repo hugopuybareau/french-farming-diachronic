@@ -21,6 +21,10 @@ interface AppState {
   // Zoom state (selected region code for drilling down)
   selectedRegion: string | null;
   setSelectedRegion: (code: string | null) => void;
+
+  // Selected department for chart
+  selectedDepartment: string | null;
+  setSelectedDepartment: (code: string | null) => void;
   
   // UI state
   isSidebarOpen: boolean;
@@ -30,7 +34,7 @@ interface AppState {
 export const useAppStore = create<AppState>((set) => ({
   // Map defaults
   level: 'regions',
-  setLevel: (level) => set({ level, selectedRegion: null }),
+  setLevel: (level) => set({ level, selectedRegion: null, selectedDepartment: null }),
   
   // Indicator defaults
   indicator: 'nb_exploitations',
@@ -47,6 +51,10 @@ export const useAppStore = create<AppState>((set) => ({
   // Zoom defaults
   selectedRegion: null,
   setSelectedRegion: (code) => set({ selectedRegion: code }),
+
+  // Department selection defaults
+  selectedDepartment: null,
+  setSelectedDepartment: (code) => set({ selectedDepartment: code }),
   
   // UI defaults
   isSidebarOpen: true,
