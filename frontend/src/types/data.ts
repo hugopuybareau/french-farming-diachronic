@@ -59,3 +59,45 @@ export interface TooltipData {
   x: number;
   y: number;
 }
+
+export interface SauRegionYear {
+  code: string;
+  name: string;
+  sau_by_year: Record<string, number>;
+}
+
+export interface SauByRegionYearData {
+  metadata: {
+    source: string;
+    description: string;
+    url: string;
+    years: number[];
+    unit: string;
+    note: string;
+  };
+  national: {
+    sau_by_year: Record<string, number>;
+  };
+  regions: SauRegionYear[];
+}
+
+export interface SauDepartmentYear {
+  code: string;
+  name: string;
+  sau_by_year: Record<string, number>;
+}
+
+export interface SauByDepartmentYearData {
+  metadata: {
+    source: string;
+    description: string;
+    url: string;
+    years: number[];
+    unit: string;
+    note: string;
+  };
+  national: {
+    sau_by_year: Record<string, number>;
+  };
+  departments: SauDepartmentYear[];
+}

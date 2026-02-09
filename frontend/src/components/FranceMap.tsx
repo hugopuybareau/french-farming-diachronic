@@ -20,15 +20,18 @@ export const FranceMap = ({ data }: FranceMapProps) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [geoData, setGeoData] = useState<{ regions: any; departments: any } | null>(null);
+  const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
   const [loading, setLoading] = useState(true);
   
-  const { 
-    level, 
-    indicator, 
-    sizeFilter, 
-    setTooltip, 
-    selectedRegion, 
-    setSelectedRegion 
+  const {
+    level,
+    indicator,
+    sizeFilter,
+    setTooltip,
+    selectedRegion,
+    setSelectedRegion,
+    selectedDepartment,
+    setSelectedDepartment
   } = useAppStore();
 
   // Load GeoJSON data
@@ -67,11 +70,10 @@ export const FranceMap = ({ data }: FranceMapProps) => {
 
   // Render map
   useEffect(() => {
-    if (!geoData || !svgRef.current || !containerRef.current) return;
+    if (!geoData || !svgRef.current || containerSize.width === 0 || containerSize.height === 0) return;
 
     const svg = d3.select(svgRef.current);
-    const container = containerRef.current;
-    const { width, height } = container.getBoundingClientRect();
+    const { width, height } = containerSize;
 
     svg.selectAll('*').remove();
 
@@ -117,8 +119,18 @@ export const FranceMap = ({ data }: FranceMapProps) => {
         const value = getValueForArea(areaData, indicator, sizeFilter);
         return value > 0 ? colorScale(value) : '#e5e5e5';
       })
-      .attr('stroke', 'hsl(100, 10%, 70%)')
-      .attr('stroke-width', level === 'regions' ? 1.5 : 0.5)
+      .attr('stroke', (d: any) => {
+        const code = d.properties.code;
+        const isSelected = (level === 'regions' && selectedRegion === code) ||
+          (level === 'departments' && selectedDepartment === code);
+        return isSelected ? 'hsl(100, 56%, 21%)' : 'hsl(100, 10%, 70%)';
+      })
+      .attr('stroke-width', (d: any) => {
+        const code = d.properties.code;
+        const isSelected = (level === 'regions' && selectedRegion === code) ||
+          (level === 'departments' && selectedDepartment === code);
+        return isSelected ? 3 : level === 'regions' ? 1.5 : 0.5;
+      })
       .attr('cursor', 'pointer')
       .style('transition', 'fill 0.2s ease, stroke-width 0.2s ease')
       .on('mouseenter', function(event: MouseEvent, d: any) {
@@ -129,7 +141,7 @@ export const FranceMap = ({ data }: FranceMapProps) => {
         
         const areaData = findDataForFeature(d);
         if (areaData) {
-          const name = 'name' in areaData ? areaData.name : `${areaData.code} - ${areaData.region_name}`;
+          const name = 'name' in areaData ? areaData.name : `${areaData.code} - ${d.properties.nom}`;
           const value = getValueForArea(areaData, indicator, sizeFilter);
           
           setTooltip({
@@ -149,7 +161,7 @@ export const FranceMap = ({ data }: FranceMapProps) => {
       .on('mousemove', function(event: MouseEvent, d: any) {
         const areaData = findDataForFeature(d);
         if (areaData) {
-          const name = 'name' in areaData ? areaData.name : `${areaData.code} - ${areaData.region_name}`;
+          const name = 'name' in areaData ? areaData.name : `${areaData.code} - ${d.properties.nom}`;
           setTooltip({
             name,
             code: areaData.code,
@@ -164,34 +176,44 @@ export const FranceMap = ({ data }: FranceMapProps) => {
           });
         }
       })
-      .on('mouseleave', function() {
+      .on('mouseleave', function(event: MouseEvent, d: any) {
+        const code = d.properties.code;
+        const isSelected = (level === 'regions' && selectedRegion === code) ||
+          (level === 'departments' && selectedDepartment === code);
         d3.select(this)
-          .attr('stroke', 'hsl(100, 10%, 70%)')
-          .attr('stroke-width', level === 'regions' ? 1.5 : 0.5);
+          .attr('stroke', isSelected ? 'hsl(100, 56%, 21%)' : 'hsl(100, 10%, 70%)')
+          .attr('stroke-width', isSelected ? 3 : (level === 'regions' ? 1.5 : 0.5));
         setTooltip(null);
       })
       .on('click', (event: MouseEvent, d: any) => {
+        const code = d.properties.code;
         if (level === 'regions') {
-          const code = d.properties.code;
-          setSelectedRegion(code);
-          useAppStore.getState().setLevel('departments');
+          const current = useAppStore.getState().selectedRegion;
+          setSelectedRegion(current === code ? null : code);
+        } else if (level === 'departments') {
+          const current = useAppStore.getState().selectedDepartment;
+          setSelectedDepartment(current === code ? null : code);
         }
       });
 
-  }, [geoData, data, level, indicator, sizeFilter, selectedRegion, findDataForFeature, setTooltip, setSelectedRegion]);
+  }, [geoData, data, level, indicator, sizeFilter, selectedRegion, selectedDepartment, findDataForFeature, setTooltip, setSelectedRegion, setSelectedDepartment, containerSize]);
 
-  // Handle resize
+  // Track container size via ResizeObserver
   useEffect(() => {
-    const handleResize = () => {
-      // Trigger re-render by updating state
-      if (geoData) {
-        setGeoData({ ...geoData });
-      }
-    };
+    const container = containerRef.current;
+    if (!container) return;
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [geoData]);
+    const observer = new ResizeObserver((entries) => {
+      const { width, height } = entries[0].contentRect;
+      setContainerSize(prev =>
+        prev.width === Math.round(width) && prev.height === Math.round(height)
+          ? prev
+          : { width: Math.round(width), height: Math.round(height) }
+      );
+    });
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, [loading]);
 
   if (loading) {
     return (
@@ -206,19 +228,16 @@ export const FranceMap = ({ data }: FranceMapProps) => {
 
   return (
     <div ref={containerRef} className="absolute inset-0">
-      {/* Back button when zoomed into a region */}
-      {selectedRegion && level === 'departments' && (
+      {/* Back button when a region is selected */}
+      {selectedRegion && (
         <Button
           variant="outline"
           size="sm"
-          onClick={() => {
-            setSelectedRegion(null);
-            useAppStore.getState().setLevel('regions');
-          }}
+          onClick={() => setSelectedRegion(null)}
           className="absolute top-4 left-4 z-10 bg-card shadow-card"
         >
           <ArrowLeft className="h-4 w-4 mr-2" />
-          Retour à la France
+          Retour
         </Button>
       )}
 
