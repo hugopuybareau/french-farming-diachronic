@@ -1,4 +1,4 @@
-import type { RA2020Data, RegionData, DepartmentData, SizeFilter, Indicator, SauClass } from '@/types/data';
+import type { RA2020Data, RegionData, DepartmentData, SizeFilter, Indicator, SauClass, SauByRegionYearData, SauByDepartmentYearData } from '@/types/data';
 
 export const getValueForArea = (
   area: RegionData | DepartmentData,
@@ -62,6 +62,49 @@ export const calculateStats = (
     min: sorted[0],
     max: sorted[sorted.length - 1],
     count: values.length
+  };
+};
+
+export const buildDataForYear = (
+  ra2020: RA2020Data,
+  sauRegionData: SauByRegionYearData,
+  sauDeptData: SauByDepartmentYearData,
+  year: number,
+): RA2020Data => {
+  const yearKey = String(year);
+
+  const regions: RegionData[] = ra2020.regions.map((r) => {
+    const sauRegion = sauRegionData.regions.find((sr) => sr.code === r.code);
+    const sau = sauRegion?.sau_by_year[yearKey] ?? 0;
+    return {
+      code: r.code,
+      name: r.name,
+      total: { nb_exploitations: 0, sau },
+      by_class: {},
+    };
+  });
+
+  const departments: DepartmentData[] = ra2020.departments.map((d) => {
+    const sauDept = sauDeptData.departments.find((sd) => sd.code === d.code);
+    const sau = sauDept?.sau_by_year[yearKey] ?? 0;
+    return {
+      code: d.code,
+      region_name: d.region_name,
+      total: { nb_exploitations: 0, sau },
+      by_class: {},
+    };
+  });
+
+  const nationalSau = sauRegionData.national.sau_by_year[yearKey] ?? 0;
+
+  return {
+    metadata: ra2020.metadata,
+    national: {
+      total: { nb_exploitations: 0, sau: nationalSau },
+      by_class: {} as RA2020Data['national']['by_class'],
+    },
+    regions,
+    departments,
   };
 };
 

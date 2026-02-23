@@ -7,12 +7,12 @@ import { Tooltip } from '@/components/Tooltip';
 import { StatsPanel } from '@/components/StatsPanel';
 import { SauChart } from '@/components/SauChart';
 import { useAppStore } from '@/stores/useAppStore';
-import { getDataRange, calculateStats } from '@/utils/dataUtils';
+import { getDataRange, calculateStats, buildDataForYear } from '@/utils/dataUtils';
 import type { RA2020Data, SauByRegionYearData, SauByDepartmentYearData } from '@/types/data';
 import { Loader2 } from 'lucide-react';
 
 const Index = () => {
-  const { level, indicator, sizeFilter, selectedRegion, selectedDepartment } = useAppStore();
+  const { level, indicator, sizeFilter, selectedRegion, selectedDepartment, selectedYear } = useAppStore();
   const [data, setData] = useState<RA2020Data | null>(null);
   const [sauData, setSauData] = useState<SauByRegionYearData | null>(null);
   const [sauDeptData, setSauDeptData] = useState<SauByDepartmentYearData | null>(null);
@@ -48,20 +48,25 @@ const Index = () => {
       });
   }, []);
   
-  const domain = useMemo(() => 
-    data ? getDataRange(data, level, indicator, sizeFilter) : [0, 1] as [number, number],
-    [data, level, indicator, sizeFilter]
+  const effectiveData = useMemo(() => {
+    if (!data || selectedYear === null || !sauData || !sauDeptData) return data;
+    return buildDataForYear(data, sauData, sauDeptData, selectedYear);
+  }, [data, sauData, sauDeptData, selectedYear]);
+
+  const domain = useMemo(() =>
+    effectiveData ? getDataRange(effectiveData, level, indicator, sizeFilter) : [0, 1] as [number, number],
+    [effectiveData, level, indicator, sizeFilter]
   );
-  
-  const stats = useMemo(() => 
-    data ? calculateStats(data, level, indicator, sizeFilter) : {
+
+  const stats = useMemo(() =>
+    effectiveData ? calculateStats(effectiveData, level, indicator, sizeFilter) : {
       total: 0,
       average: 0,
       min: { name: '-', value: 0 },
       max: { name: '-', value: 0 },
       count: 0
     },
-    [data, level, indicator, sizeFilter]
+    [effectiveData, level, indicator, sizeFilter]
   );
 
   if (loading) {
@@ -93,7 +98,7 @@ const Index = () => {
       {/* Main Map Area */}
       <main className="flex-1 flex flex-col overflow-hidden">
         <div className={`relative overflow-hidden transition-all duration-500 ${(selectedRegion || selectedDepartment) ? 'h-[55vh]' : 'flex-1'}`}>
-          <FranceMap data={data} />
+          <FranceMap data={effectiveData!} />
 
           {/* Legend */}
           <Legend domain={domain} />

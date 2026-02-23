@@ -9,6 +9,10 @@ interface AppState {
   // Indicator state
   indicator: Indicator;
   setIndicator: (indicator: Indicator) => void;
+
+  // Year selector (null = use 2020 census data)
+  selectedYear: number | null;
+  setSelectedYear: (year: number | null) => void;
   
   // Size filter state
   sizeFilter: SizeFilter;
@@ -38,7 +42,17 @@ export const useAppStore = create<AppState>((set) => ({
   
   // Indicator defaults
   indicator: 'nb_exploitations',
-  setIndicator: (indicator) => set({ indicator }),
+  setIndicator: (indicator) => set((state) => ({
+    indicator,
+    selectedYear: indicator === 'nb_exploitations' ? null : state.selectedYear,
+  })),
+
+  // Year selector defaults
+  selectedYear: null,
+  setSelectedYear: (year) => set((state) => ({
+    selectedYear: year,
+    sizeFilter: year !== null ? 'all' : state.sizeFilter,
+  })),
   
   // Size filter defaults
   sizeFilter: 'all',

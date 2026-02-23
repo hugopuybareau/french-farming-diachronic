@@ -8,7 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { MapIcon, BarChart3, Layers, ChevronLeft, ChevronRight } from 'lucide-react';
+import { MapIcon, BarChart3, Layers, ChevronLeft, ChevronRight, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { Indicator, SizeFilter, MapLevel } from '@/types/data';
 
@@ -16,6 +16,8 @@ const indicators: { value: Indicator; label: string }[] = [
   { value: 'nb_exploitations', label: "Nombre d'exploitations" },
   { value: 'sau', label: 'SAU (hectares)' },
 ];
+
+const years = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024];
 
 const sizeFilters: { value: SizeFilter; label: string }[] = [
   { value: 'all', label: 'Toutes tailles' },
@@ -27,13 +29,15 @@ const sizeFilters: { value: SizeFilter; label: string }[] = [
 ];
 
 export const ControlPanel = () => {
-  const { 
-    level, 
-    setLevel, 
-    indicator, 
-    setIndicator, 
-    sizeFilter, 
+  const {
+    level,
+    setLevel,
+    indicator,
+    setIndicator,
+    sizeFilter,
     setSizeFilter,
+    selectedYear,
+    setSelectedYear,
     isSidebarOpen,
     toggleSidebar
   } = useAppStore();
@@ -67,7 +71,7 @@ export const ControlPanel = () => {
               <h1 className="font-display text-xl font-bold">Recensement Agricole</h1>
             </div>
             <p className="text-sm text-muted-foreground">
-              Données 2020 • Agreste
+              Données {selectedYear ?? 2020}{!selectedYear && ' (Recensement)'} • Agreste
             </p>
           </div>
 
@@ -135,10 +139,40 @@ export const ControlPanel = () => {
             </Select>
           </div>
 
+          {/* Year selector (SAU only) */}
+          {indicator === 'sau' && (
+            <div className="space-y-3">
+              <Label className="flex items-center gap-2 text-sm font-medium">
+                <Calendar className="h-4 w-4 text-accent" />
+                Année
+              </Label>
+              <Select
+                value={selectedYear === null ? 'census' : String(selectedYear)}
+                onValueChange={(v) => setSelectedYear(v === 'census' ? null : Number(v))}
+              >
+                <SelectTrigger className="w-full">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="census">2020 (Recensement)</SelectItem>
+                  {years.map((y) => (
+                    <SelectItem key={y} value={String(y)}>
+                      {y}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+          )}
+
           {/* Size filter */}
           <div className="space-y-3">
             <Label className="text-sm font-medium">Taille des exploitations (SAU)</Label>
-            <Select value={sizeFilter} onValueChange={(v) => setSizeFilter(v as SizeFilter)}>
+            <Select
+              value={sizeFilter}
+              onValueChange={(v) => setSizeFilter(v as SizeFilter)}
+              disabled={selectedYear !== null}
+            >
               <SelectTrigger className="w-full">
                 <SelectValue />
               </SelectTrigger>
@@ -150,6 +184,11 @@ export const ControlPanel = () => {
                 ))}
               </SelectContent>
             </Select>
+            {selectedYear !== null && (
+              <p className="text-xs text-muted-foreground">
+                Le filtre par taille n'est disponible que pour le Recensement 2020.
+              </p>
+            )}
           </div>
 
           {/* Info */}
