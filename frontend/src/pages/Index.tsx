@@ -6,6 +6,7 @@ import { Legend } from '@/components/Legend';
 import { Tooltip } from '@/components/Tooltip';
 import { StatsPanel } from '@/components/StatsPanel';
 import { SauChart } from '@/components/SauChart';
+import { SauPieChart } from '@/components/SauPieChart';
 import { useAppStore } from '@/stores/useAppStore';
 import { getDataRange, calculateStats, buildDataForYear } from '@/utils/dataUtils';
 import type { RA2020Data, SauByRegionYearData, SauByDepartmentYearData } from '@/types/data';
@@ -18,6 +19,7 @@ const Index = () => {
   const [sauDeptData, setSauDeptData] = useState<SauByDepartmentYearData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState<'carte' | 'repartition'>('carte');
 
   // Load data via fetch
   useEffect(() => {
@@ -95,40 +97,79 @@ const Index = () => {
       {/* Control Panel Sidebar */}
       <ControlPanel />
       
-      {/* Main Map Area */}
+      {/* Main Area */}
       <main className="flex-1 flex flex-col overflow-hidden">
-        <div className={`relative overflow-hidden transition-all duration-500 ${(selectedRegion || selectedDepartment) ? 'h-[55vh]' : 'flex-1'}`}>
-          <FranceMap data={effectiveData!} />
-
-          {/* Legend */}
-          <Legend domain={domain} />
-
-          {/* Stats Panel */}
-          <StatsPanel stats={stats} />
-
-          {/* Tooltip */}
-          <Tooltip />
+        {/* Tab bar */}
+        <div className="flex border-b border-border bg-card shrink-0">
+          <button
+            onClick={() => setActiveTab('carte')}
+            className={`px-5 py-2.5 text-sm font-medium transition-colors relative ${
+              activeTab === 'carte'
+                ? 'text-primary'
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            Carte
+            {activeTab === 'carte' && (
+              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />
+            )}
+          </button>
+          <button
+            onClick={() => setActiveTab('repartition')}
+            className={`px-5 py-2.5 text-sm font-medium transition-colors relative ${
+              activeTab === 'repartition'
+                ? 'text-primary'
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            Répartition SAU
+            {activeTab === 'repartition' && (
+              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />
+            )}
+          </button>
         </div>
 
-        {selectedRegion && sauData && (() => {
-          const regionSau = sauData.regions.find(r => r.code === selectedRegion);
-          if (!regionSau) return null;
-          return (
-            <div className="h-[45vh] border-t border-border">
-              <SauChart regionData={regionSau} />
-            </div>
-          );
-        })()}
+        {/* Tab content */}
+        {activeTab === 'carte' ? (
+          <>
+            <div className={`relative overflow-hidden transition-all duration-500 ${(selectedRegion || selectedDepartment) ? 'h-[55vh]' : 'flex-1'}`}>
+              <FranceMap data={effectiveData!} />
 
-        {selectedDepartment && sauDeptData && (() => {
-          const deptSau = sauDeptData.departments.find(d => d.code === selectedDepartment);
-          if (!deptSau) return null;
-          return (
-            <div className="h-[45vh] border-t border-border">
-              <SauChart regionData={deptSau} />
+              {/* Legend */}
+              <Legend domain={domain} />
+
+              {/* Stats Panel */}
+              <StatsPanel stats={stats} />
+
+              {/* Tooltip */}
+              <Tooltip />
             </div>
-          );
-        })()}
+
+            {selectedRegion && sauData && (() => {
+              const regionSau = sauData.regions.find(r => r.code === selectedRegion);
+              if (!regionSau) return null;
+              return (
+                <div className="h-[45vh] border-t border-border">
+                  <SauChart regionData={regionSau} />
+                </div>
+              );
+            })()}
+
+            {selectedDepartment && sauDeptData && (() => {
+              const deptSau = sauDeptData.departments.find(d => d.code === selectedDepartment);
+              if (!deptSau) return null;
+              return (
+                <div className="h-[45vh] border-t border-border">
+                  <SauChart regionData={deptSau} />
+                </div>
+              );
+            })()}
+          </>
+        ) : (
+          <div className="flex-1 overflow-hidden">
+            <SauPieChart data={effectiveData!} sauDeptData={sauDeptData} />
+          </div>
+        )}
       </main>
     </div>
   );
