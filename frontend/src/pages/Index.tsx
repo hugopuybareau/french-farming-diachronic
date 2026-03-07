@@ -1,4 +1,3 @@
-// Agricultural Census Map Application
 import { useMemo, useState, useEffect } from 'react';
 import { ControlPanel } from '@/components/ControlPanel';
 import { FranceMap } from '@/components/FranceMap';
@@ -21,7 +20,6 @@ const Index = () => {
   const [error, setError] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<'carte' | 'repartition'>('carte');
 
-  // Load data via fetch
   useEffect(() => {
     Promise.all([
       fetch('/data/ra2020.json').then(res => {
@@ -94,12 +92,9 @@ const Index = () => {
 
   return (
     <div className="flex h-screen overflow-hidden">
-      {/* Control Panel Sidebar */}
       <ControlPanel />
       
-      {/* Main Area */}
       <main className="flex-1 flex flex-col overflow-hidden">
-        {/* Tab bar */}
         <div className="flex border-b border-border bg-card shrink-0">
           <button
             onClick={() => setActiveTab('carte')}
@@ -129,19 +124,13 @@ const Index = () => {
           </button>
         </div>
 
-        {/* Tab content */}
         {activeTab === 'carte' ? (
           <>
             <div className={`relative overflow-hidden transition-all duration-500 ${(selectedRegion || selectedDepartment) && indicator === 'sau' ? 'h-[55vh]' : 'flex-1'}`}>
               <FranceMap data={effectiveData!} />
 
-              {/* Legend */}
               <Legend domain={domain} />
-
-              {/* Stats Panel */}
               <StatsPanel stats={stats} />
-
-              {/* Tooltip */}
               <Tooltip />
             </div>
 

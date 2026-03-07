@@ -1,6 +1,6 @@
 import type { RA2020Data, RegionData, DepartmentData, SizeFilter, Indicator, SauClass, SauByRegionYearData, SauByDepartmentYearData } from '@/types/data';
 
-// Overseas regions (DOM) not shown on the metropolitan map
+// Overseas regions (DOM) pour pas qu'on les voit sur la carte métropolitaine et qu'on les prenne pas en compte dans les stats
 const OVERSEAS_REGION_CODES = new Set(['01', '02', '03', '04', '06']);
 export const isMetropolitan = (area: RegionData | DepartmentData): boolean => {
   if ('region_name' in area) {

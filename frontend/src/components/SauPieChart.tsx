@@ -29,7 +29,6 @@ export const SauPieChart = ({ data, sauDeptData }: SauPieChartProps) => {
 
   const { indicator, sizeFilter } = useAppStore();
 
-  // Build a department code → name lookup from sauDeptData
   const deptNameMap = useMemo(() => {
     const map = new Map<string, string>();
     if (sauDeptData) {
@@ -40,7 +39,6 @@ export const SauPieChart = ({ data, sauDeptData }: SauPieChartProps) => {
     return map;
   }, [sauDeptData]);
 
-  // Observe container resize
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -56,7 +54,6 @@ export const SauPieChart = ({ data, sauDeptData }: SauPieChartProps) => {
     return () => observer.disconnect();
   }, []);
 
-  // Build slice data
   const slices = useMemo((): SliceData[] => {
     if (drillRegion) {
       const depts = data.departments.filter(d => d.region_name === drillRegion.name && isMetropolitan(d));
@@ -73,7 +70,6 @@ export const SauPieChart = ({ data, sauDeptData }: SauPieChartProps) => {
     })).filter(s => s.value > 0);
   }, [data, drillRegion, indicator, sizeFilter, deptNameMap]);
 
-  // Group small slices into "Autres" and assign red→yellow gradient colors
   const { displaySlices, colorMap } = useMemo(() => {
     const total = slices.reduce((sum, s) => sum + s.value, 0);
     if (total === 0) return { displaySlices: [], colorMap: new Map<string, string>() };
@@ -95,7 +91,6 @@ export const SauPieChart = ({ data, sauDeptData }: SauPieChartProps) => {
       result.push({ code: '__autres__', name: 'Autres', value: autresValue });
     }
 
-    // Viridis sequential scale: index 0 (largest) = dark purple, last = yellow
     const colorScale = d3.scaleSequential()
       .domain([0, Math.max(big.length - 1, 1)])
       .interpolator(d3.interpolateViridis);
@@ -108,7 +103,6 @@ export const SauPieChart = ({ data, sauDeptData }: SauPieChartProps) => {
     return { displaySlices: result, colorMap: cMap };
   }, [slices]);
 
-  // Render pie chart
   useEffect(() => {
     if (!svgRef.current || dimensions.width === 0 || dimensions.height === 0) return;
 
@@ -152,7 +146,6 @@ export const SauPieChart = ({ data, sauDeptData }: SauPieChartProps) => {
     const chartG = svg.append('g')
       .attr('transform', `translate(${cx},${cy})`);
 
-    // Slices
     chartG.selectAll('path')
       .data(arcs)
       .join('path')
@@ -183,7 +176,6 @@ export const SauPieChart = ({ data, sauDeptData }: SauPieChartProps) => {
           const rect = container.getBoundingClientRect();
           const x = event.clientX - rect.left + 12;
           const y = event.clientY - rect.top - 10;
-          // Prevent overflow on the right
           const tipWidth = tooltipEl.offsetWidth;
           const tipHeight = tooltipEl.offsetHeight;
           const adjustedX = x + tipWidth > rect.width ? x - tipWidth - 24 : x;
@@ -206,7 +198,6 @@ export const SauPieChart = ({ data, sauDeptData }: SauPieChartProps) => {
         }
       });
 
-    // Center text
     const centerG = chartG.append('g').attr('text-anchor', 'middle');
     centerG.append('text')
       .attr('y', -8)
@@ -220,7 +211,6 @@ export const SauPieChart = ({ data, sauDeptData }: SauPieChartProps) => {
       .attr('font-weight', '600')
       .text(indicator === 'sau' ? `${formatNumberFull(total)} ha` : formatNumberFull(total));
 
-    // Legend
     const legendG = svg.append('g')
       .attr('transform', `translate(${chartAreaWidth + 8}, ${20})`);
 
@@ -257,7 +247,6 @@ export const SauPieChart = ({ data, sauDeptData }: SauPieChartProps) => {
       className="relative w-full h-full"
       style={{ background: 'hsl(120, 8%, 98%)' }}
     >
-      {/* Title */}
       <div className="absolute top-3 left-4 flex items-center gap-3 z-10">
         {drillRegion && (
           <Button
@@ -284,7 +273,6 @@ export const SauPieChart = ({ data, sauDeptData }: SauPieChartProps) => {
         height={dimensions.height}
       />
 
-      {/* HTML tooltip that follows the mouse */}
       <div
         ref={tooltipRef}
         style={{

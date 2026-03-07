@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import * as d3 from 'd3';
-import * as topojson from 'topojson-client';
 import { useAppStore } from '@/stores/useAppStore';
 import { createColorScale } from '@/utils/colorScales';
 import { getValueForArea, getDataRange } from '@/utils/dataUtils';
@@ -13,7 +12,6 @@ interface FranceMapProps {
   data: RA2020Data;
 }
 
-// TopoJSON URLs for France
 const REGIONS_URL = 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/regions.geojson';
 const DEPARTMENTS_URL = 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements.geojson';
 
@@ -35,7 +33,6 @@ export const FranceMap = ({ data }: FranceMapProps) => {
     setSelectedDepartment
   } = useAppStore();
 
-  // Load GeoJSON data
   useEffect(() => {
     const loadGeoData = async () => {
       try {
@@ -58,7 +55,6 @@ export const FranceMap = ({ data }: FranceMapProps) => {
     loadGeoData();
   }, []);
 
-  // Find data for a geographic feature
   const findDataForFeature = useCallback((feature: any): RegionData | DepartmentData | null => {
     const code = feature.properties.code;
     
@@ -69,7 +65,6 @@ export const FranceMap = ({ data }: FranceMapProps) => {
     }
   }, [data, level]);
 
-  // Render map
   useEffect(() => {
     if (!geoData || !svgRef.current || containerSize.width === 0 || containerSize.height === 0) return;
 
@@ -78,11 +73,9 @@ export const FranceMap = ({ data }: FranceMapProps) => {
 
     svg.selectAll('*').remove();
 
-    // Get current geo features
     const currentGeo = level === 'regions' ? geoData.regions : geoData.departments;
     let features = currentGeo.features;
 
-    // Filter by selected region if in department view
     if (level === 'departments' && selectedRegion) {
       const selectedRegionData = data.regions.find(r => r.code === selectedRegion);
       if (selectedRegionData) {
@@ -93,11 +86,9 @@ export const FranceMap = ({ data }: FranceMapProps) => {
       }
     }
 
-    // Calculate color domain
     const [minVal, maxVal] = getDataRange(data, level, indicator, sizeFilter);
     const colorScale = createColorScale([minVal, maxVal]);
 
-    // Create projection
     const projection = d3.geoMercator()
       .fitSize([width - 40, height - 80], {
         type: 'FeatureCollection',
@@ -106,10 +97,8 @@ export const FranceMap = ({ data }: FranceMapProps) => {
 
     const pathGenerator = d3.geoPath().projection(projection);
 
-    // Create main group
     const g = svg.append('g');
 
-    // Draw features
     g.selectAll('path')
       .data(features)
       .join('path')
@@ -143,8 +132,6 @@ export const FranceMap = ({ data }: FranceMapProps) => {
         const areaData = findDataForFeature(d);
         if (areaData) {
           const name = 'name' in areaData ? areaData.name : `${areaData.code} - ${d.properties.nom}`;
-          const value = getValueForArea(areaData, indicator, sizeFilter);
-          
           setTooltip({
             name,
             code: areaData.code,
@@ -177,7 +164,7 @@ export const FranceMap = ({ data }: FranceMapProps) => {
           });
         }
       })
-      .on('mouseleave', function(event: MouseEvent, d: any) {
+      .on('mouseleave', function(_event: MouseEvent, d: any) {
         const code = d.properties.code;
         const isSelected = (level === 'regions' && selectedRegion === code) ||
           (level === 'departments' && selectedDepartment === code);
@@ -206,7 +193,6 @@ export const FranceMap = ({ data }: FranceMapProps) => {
 
   }, [geoData, data, level, indicator, sizeFilter, selectedRegion, selectedDepartment, findDataForFeature, setTooltip, setSelectedRegion, setSelectedDepartment, containerSize]);
 
-  // Track container size via ResizeObserver
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -236,7 +222,6 @@ export const FranceMap = ({ data }: FranceMapProps) => {
 
   return (
     <div ref={containerRef} className="absolute inset-0">
-      {/* Back button when a region is selected */}
       {selectedRegion && (
         <Button
           variant="outline"

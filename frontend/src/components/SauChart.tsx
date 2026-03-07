@@ -12,7 +12,6 @@ export const SauChart = ({ regionData }: SauChartProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
-  // Observe container resize
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -25,7 +24,6 @@ export const SauChart = ({ regionData }: SauChartProps) => {
     return () => observer.disconnect();
   }, []);
 
-  // Render chart
   useEffect(() => {
     if (!svgRef.current || dimensions.width === 0 || dimensions.height === 0) return;
 
