@@ -59,6 +59,20 @@ const Index = () => {
     [effectiveData, level, indicator, sizeFilter]
   );
 
+  // Fixed scale across all SAU years for meaningful temporal comparison
+  const globalDomain = useMemo((): [number, number] => {
+    if (!data || indicator !== 'sau' || !sauData || !sauDeptData) return domain;
+    const allYears = [2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024];
+    const allRanges = [
+      getDataRange(data, level, 'sau', sizeFilter),
+      ...allYears.map(y => getDataRange(buildDataForYear(data, sauData, sauDeptData, y), level, 'sau', sizeFilter))
+    ];
+    return [
+      Math.min(...allRanges.map(r => r[0])),
+      Math.max(...allRanges.map(r => r[1]))
+    ];
+  }, [data, sauData, sauDeptData, indicator, level, sizeFilter, domain]);
+
   const stats = useMemo(() =>
     effectiveData ? calculateStats(effectiveData, level, indicator, sizeFilter) : {
       total: 0,
@@ -141,9 +155,9 @@ const Index = () => {
         {activeTab === 'carte' ? (
           <>
             <div className={`relative overflow-hidden transition-all duration-500 ${(selectedRegion || selectedDepartment) && indicator === 'sau' ? 'h-[55vh]' : 'flex-1'}`}>
-              <FranceMap data={effectiveData!} />
+              <FranceMap data={effectiveData!} domain={globalDomain} />
 
-              <Legend domain={domain} />
+              <Legend domain={globalDomain} />
               <StatsPanel stats={stats} />
               <Tooltip />
             </div>

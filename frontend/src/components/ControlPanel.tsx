@@ -12,8 +12,6 @@ import { MapIcon, BarChart3, Layers, ChevronLeft, ChevronRight, Calendar } from 
 import { Button } from '@/components/ui/button';
 import type { Indicator, SizeFilter, MapLevel } from '@/types/data';
 
-const years = [2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024];
-
 const sizeFilters: { value: SizeFilter; label: string }[] = [
   { value: 'all', label: 'Toutes tailles' },
   { value: '[0,20)', label: 'Moins de 20 ha' },
@@ -165,22 +163,32 @@ export const ControlPanel = () => {
                 <Calendar className="h-4 w-4 text-accent" />
                 Année
               </Label>
-              <Select
-                value={selectedYear === null ? 'census' : String(selectedYear)}
-                onValueChange={(v) => setSelectedYear(v === 'census' ? null : Number(v))}
-              >
-                <SelectTrigger className="w-full">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="census">2020 (Recensement)</SelectItem>
-                  {years.map((y) => (
-                    <SelectItem key={y} value={String(y)}>
-                      {y} (SAA)
-                    </SelectItem>
+              <div className="space-y-2">
+                <div className="flex justify-between text-xs text-muted-foreground">
+                  <span>2016</span>
+                  <span className="font-medium text-foreground">
+                    {selectedYear === null ? '2020 (Recensement)' : `${selectedYear} (SAA)`}
+                  </span>
+                  <span>2024</span>
+                </div>
+                <input
+                  type="range"
+                  min={2016}
+                  max={2024}
+                  step={1}
+                  value={selectedYear ?? 2020}
+                  onChange={(e) => {
+                    const v = Number(e.target.value);
+                    setSelectedYear(v === 2020 ? null : v);
+                  }}
+                  className="w-full accent-accent"
+                />
+                <div className="flex justify-between text-xs text-muted-foreground px-0.5">
+                  {[2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024].map(y => (
+                    <span key={y} className="w-4 text-center">|</span>
                   ))}
-                </SelectContent>
-              </Select>
+                </div>
+              </div>
             </div>
           )}
 

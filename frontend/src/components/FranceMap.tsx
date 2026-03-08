@@ -10,12 +10,13 @@ import { ArrowLeft, Loader2 } from 'lucide-react';
 
 interface FranceMapProps {
   data: RA2020Data;
+  domain?: [number, number];
 }
 
 const REGIONS_URL = 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/regions.geojson';
 const DEPARTMENTS_URL = 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements.geojson';
 
-export const FranceMap = ({ data }: FranceMapProps) => {
+export const FranceMap = ({ data, domain }: FranceMapProps) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [geoData, setGeoData] = useState<{ regions: any; departments: any } | null>(null);
@@ -86,7 +87,7 @@ export const FranceMap = ({ data }: FranceMapProps) => {
       }
     }
 
-    const [minVal, maxVal] = getDataRange(data, level, indicator, sizeFilter);
+    const [minVal, maxVal] = domain ?? getDataRange(data, level, indicator, sizeFilter);
     const colorScale = createColorScale([minVal, maxVal]);
 
     const projection = d3.geoMercator()
@@ -191,7 +192,44 @@ export const FranceMap = ({ data }: FranceMapProps) => {
         }
       });
 
-  }, [geoData, data, level, indicator, sizeFilter, selectedRegion, selectedDepartment, findDataForFeature, setTooltip, setSelectedRegion, setSelectedDepartment, containerSize]);
+    // Labels régions — groupe séparé appended après `g` pour rester au-dessus même après .raise()
+    if (level === 'regions') {
+      const abbreviate = (name: string): string => {
+        const abbrevs: Record<string, string> = {
+          'Nouvelle-Aquitaine': 'Nouv. Aquitaine',
+          'Auvergne-Rhône-Alpes': 'AuRA',
+          'Bourgogne-Franche-Comté': 'Bourg.-FC',
+          'Bretagne': 'Bretagne',
+          'Centre-Val de Loire': 'Centre-VdL',
+          'Corse': 'Corse',
+          'Grand Est': 'Grand Est',
+          'Hauts-de-France': 'Hauts-de-Fr.',
+          'Île-de-France': 'Île-de-Fr.',
+          'Normandie': 'Normandie',
+          'Occitanie': 'Occitanie',
+          'Pays de la Loire': 'Pays de la Loire',
+          "Provence-Alpes-Côte d'Azur": 'PACA',
+        };
+        return abbrevs[name] ?? name;
+      };
+
+      const labelsG = svg.append('g'); // appended after paths group → always on top
+      labelsG.selectAll('text.region-label')
+        .data(features)
+        .join('text')
+        .attr('class', 'region-label')
+        .attr('x', (d: any) => pathGenerator.centroid(d)[0])
+        .attr('y', (d: any) => pathGenerator.centroid(d)[1])
+        .text((d: any) => abbreviate(d.properties.nom as string))
+        .attr('text-anchor', 'middle')
+        .attr('dominant-baseline', 'central')
+        .attr('font-size', '9px')
+        .attr('fill', 'rgba(50, 50, 50, 0.55)')
+        .attr('pointer-events', 'none')
+        .style('user-select', 'none');
+    }
+
+  }, [geoData, data, domain, level, indicator, sizeFilter, selectedRegion, selectedDepartment, findDataForFeature, setTooltip, setSelectedRegion, setSelectedDepartment, containerSize]);
 
   useEffect(() => {
     const container = containerRef.current;
